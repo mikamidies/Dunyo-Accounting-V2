@@ -6,6 +6,7 @@
     <HomeServices />
     <HomeNews />
     <HomeFAQ />
+    <HomePartners />
   </div>
 </template>
 

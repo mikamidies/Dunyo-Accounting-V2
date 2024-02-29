@@ -7,7 +7,7 @@
         <h4 class="title">News</h4>
 
         <div class="buttons">
-          <div class="prev">
+          <div class="newsPrev">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -24,7 +24,7 @@
               />
             </svg>
           </div>
-          <div class="next">
+          <div class="newsNext">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -232,6 +232,10 @@ export default {
   mounted() {
     new Swiper(this.$refs.newsSwiper, {
       slidesPerView: 3,
+      navigation: {
+        prevEl: ".newsPrev",
+        nextEl: ".newsNext",
+      },
     });
   },
 };
@@ -270,8 +274,8 @@ export default {
   align-items: center;
   gap: 16px;
 }
-.prev,
-.next {
+.newsPrev,
+.newsNext {
   border-radius: 50%;
   border: 1px solid #71b1fa;
   width: 48px;

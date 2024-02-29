@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <button class="prev">
+    <button class="heroPrev">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="14"
@@ -16,7 +16,7 @@
         />
       </svg>
     </button>
-    <button class="next">
+    <button class="heroNext">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="14"
@@ -37,7 +37,7 @@
     <img src="@/assets/img/hero-bird.png" alt="" class="bird" />
     <div class="container">
       <div class="slider">
-        <div class="swiper">
+        <div class="swiper heroSwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="content">
@@ -154,11 +154,11 @@ import "swiper/swiper-bundle.min.css";
 
 export default {
   mounted() {
-    new Swiper(".swiper", {
+    new Swiper(".heroSwiper", {
       loop: true,
       navigation: {
-        nextEl: ".next",
-        prevEl: ".prev",
+        nextEl: ".heroNext",
+        prevEl: ".heroPrev",
       },
     });
   },
@@ -287,7 +287,7 @@ video {
   backdrop-filter: blur(12px);
   padding: 8px 24px;
 }
-.prev {
+.heroPrev {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -301,7 +301,7 @@ video {
   border: 1px solid white;
   border-radius: 50%;
 }
-.next {
+.heroNext {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -315,7 +315,7 @@ video {
   border: 1px solid white;
   border-radius: 50%;
 }
-.next svg {
+.heroNext svg {
   transform: rotate(180deg);
 }
 </style>
