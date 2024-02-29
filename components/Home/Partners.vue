@@ -126,7 +126,6 @@ export default {
   line-height: 120%; /* 57.6px */
   padding-left: 16px;
   border-left: 4px solid #bba14f;
-  margin-bottom: 40px;
 }
 .swiper {
   border: 1px solid var(--grey-8, #ebebeb);
