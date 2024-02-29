@@ -5,6 +5,7 @@
     <HomeNumbers />
     <HomeServices />
     <HomeNews />
+    <HomeFAQ />
   </div>
 </template>
 

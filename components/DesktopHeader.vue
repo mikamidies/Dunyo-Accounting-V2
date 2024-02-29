@@ -108,7 +108,7 @@ export default {
   gap: 40px;
 }
 .left a {
-  color: var(--White, #fff);
+  color: var(--White, #fff) !important;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
