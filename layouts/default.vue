@@ -2,6 +2,7 @@
   <main>
     <DesktopHeader />
     <nuxt />
+    <DesktopFooter />
   </main>
 </template>
 

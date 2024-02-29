@@ -7,6 +7,7 @@
     <HomeNews />
     <HomeFAQ />
     <HomePartners />
+    <HomeContacts />
   </div>
 </template>
 
