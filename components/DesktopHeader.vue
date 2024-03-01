@@ -22,7 +22,7 @@
             <NuxtLink class="link" to="/news"> News </NuxtLink>
           </li>
           <li>
-            <NuxtLink class="link" to="/"> Contacts </NuxtLink>
+            <NuxtLink class="link" to="/contacts"> Contacts </NuxtLink>
           </li>
         </ul>
       </div>

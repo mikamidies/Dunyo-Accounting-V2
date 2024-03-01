@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="wrap" v-if="!$route.name.includes('contacts')">
     <img src="@/assets/img/footer-bird.png" class="bird" alt="" />
 
     <div class="container">
