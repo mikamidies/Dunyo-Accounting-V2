@@ -126,12 +126,12 @@ meter {
   padding: 0 4px;
 }
 .container.medium {
-  max-width: 1465px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 4px;
 }
 .container.small {
-  max-width: 1330px;
+  max-width: 954px;
   margin: 0 auto;
   padding: 0 4px;
 }
@@ -183,4 +183,7 @@ input:focus {
 }
 .nuxt-link-exact-active {
   color: #f9e567 !important;
+}
+.marginless {
+  margin: 0 !important;
 }
