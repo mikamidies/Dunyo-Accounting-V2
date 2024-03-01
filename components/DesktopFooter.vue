@@ -6,10 +6,10 @@
       <div class="grid">
         <div class="sec">
           <h4 class="title">Contact us</h4>
-          <ps class="sub">
+          <p class="sub">
             If you have questions or want to discuss cooperation, write, call or
             request a call back, and we will tell you everything ourselves
-          </ps>
+          </p>
         </div>
         <!-- <div class="sec"></div> -->
         <div class="sec items" style="justify-items: end">

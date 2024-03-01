@@ -141,12 +141,9 @@
       </div>
 
       <div class="tags">
-        <div class="tag">Audit Services</div>
-        <div class="tag">Taxation Services</div>
-        <div class="tag">Accounting Services</div>
-        <div class="tag">Corporate Bank Account Opening</div>
-        <div class="tag">Business Consulting</div>
-        <div class="tag">Business in UAE</div>
+        <div class="tag" v-for="item in services" :key="item.id">
+          {{ item.title }}
+        </div>
       </div>
     </div>
   </div>
@@ -157,6 +154,8 @@ import Swiper from "swiper/swiper-bundle.js";
 import "swiper/swiper-bundle.min.css";
 
 export default {
+  props: ["services"],
+
   mounted() {
     new Swiper(".heroSwiper", {
       loop: true,

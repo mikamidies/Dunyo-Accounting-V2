@@ -1,10 +1,10 @@
 <template>
   <div class="master">
-    <HomeHero />
+    <HomeHero :services="services" />
     <HomeAbout />
     <HomeNumbers />
-    <HomeServices />
-    <HomeNews />
+    <HomeServices :services="services" />
+    <HomeNews :news="news" />
     <HomeFAQ />
     <HomePartners />
     <HomeContacts />
@@ -14,7 +14,20 @@
 </template>
 
 <script>
-export default {};
+import servicesApi from "@/api/services";
+import newsApi from "@/api/news";
+
+export default {
+  async asyncData({ $axios }) {
+    const services = await servicesApi.getServices($axios);
+    const news = await newsApi.getNews($axios);
+
+    return {
+      services,
+      news,
+    };
+  },
+};
 </script>
 
 <style scoped></style>

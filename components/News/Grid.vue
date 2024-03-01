@@ -29,155 +29,27 @@
           </div>
         </div>
         <div class="cats">
-          <button>Мировые новости</button>
-          <button>Новости</button>
-          <button>Компания</button>
-          <button>Технология</button>
+          <button v-for="category in newsCategories" :key="category.id">
+            {{ category.title }}
+          </button>
         </div>
       </div>
       <div class="grid">
-        <div class="cardo">
-          <NuxtLink to="/news/slug">
+        <div v-for="item in news" :key="item.id" class="cardo">
+          <NuxtLink :to="`/news/${item.slug}`">
             <div class="img">
-              <img src="@/assets/img/new.jpg" alt="" />
+              <img :src="item.image" alt="" />
             </div>
             <div class="tags">
-              <div class="tag">Мировые новости</div>
-              <div class="tag">Мировые новости</div>
+              <div class="tag">{{ item.category.title }}</div>
             </div>
             <div class="bottom">
               <div class="content">
-                <h2 class="name">Corporate Bank Account Opening</h2>
-                <p class="sub">
-                  Data can be taken from an unlimited number of Camunda BPM
-                  microservices and applications, as well as ot
-                </p>
+                <h2 class="name">{{ item.title }}</h2>
+                <div v-html="item.text" class="sub"></div>
               </div>
               <div class="date">
-                <p>1.5.2024</p>
-
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M10 7L14 12L10 17"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </div>
-          </NuxtLink>
-        </div>
-        <div class="cardo">
-          <NuxtLink to="/news/slug">
-            <div class="img">
-              <img src="@/assets/img/new.jpg" alt="" />
-            </div>
-            <div class="tags">
-              <div class="tag">Мировые новости</div>
-              <div class="tag">Мировые новости</div>
-            </div>
-            <div class="bottom">
-              <div class="content">
-                <h2 class="name">Corporate Bank Account Opening</h2>
-                <p class="sub">
-                  Data can be taken from an unlimited number of Camunda BPM
-                  microservices and applications, as well as ot
-                </p>
-              </div>
-              <div class="date">
-                <p>1.5.2024</p>
-
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M10 7L14 12L10 17"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </div>
-          </NuxtLink>
-        </div>
-        <div class="cardo">
-          <NuxtLink to="/news/slug">
-            <div class="img">
-              <img src="@/assets/img/new.jpg" alt="" />
-            </div>
-            <div class="tags">
-              <div class="tag">Мировые новости</div>
-              <div class="tag">Мировые новости</div>
-            </div>
-            <div class="bottom">
-              <div class="content">
-                <h2 class="name">Corporate Bank Account Opening</h2>
-                <p class="sub">
-                  Data can be taken from an unlimited number of Camunda BPM
-                  microservices and applications, as well as ot
-                </p>
-              </div>
-              <div class="date">
-                <p>1.5.2024</p>
-
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M10 7L14 12L10 17"
-                      stroke="white"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </div>
-          </NuxtLink>
-        </div>
-        <div class="cardo">
-          <NuxtLink to="/news/slug">
-            <div class="img">
-              <img src="@/assets/img/new.jpg" alt="" />
-            </div>
-            <div class="tags">
-              <div class="tag">Мировые новости</div>
-              <div class="tag">Мировые новости</div>
-            </div>
-            <div class="bottom">
-              <div class="content">
-                <h2 class="name">Corporate Bank Account Opening</h2>
-                <p class="sub">
-                  Data can be taken from an unlimited number of Camunda BPM
-                  microservices and applications, as well as ot
-                </p>
-              </div>
-              <div class="date">
-                <p>1.5.2024</p>
+                <p>{{ item.date }}</p>
 
                 <span>
                   <svg
@@ -206,7 +78,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["news", "newsCategories"],
+};
 </script>
 
 <style scoped>
@@ -259,6 +133,12 @@ export default {};
   font-weight: 500;
   line-height: 140%; /* 33.6px */
   margin-bottom: 8px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .sub {
   color: #5d5d5f;
@@ -298,6 +178,7 @@ export default {};
 .cardo {
   height: 608px;
   transition: 0.4s;
+  overflow: hidden;
 }
 .cardo a {
   display: flex;

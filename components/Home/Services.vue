@@ -3,164 +3,24 @@
     <div class="container">
       <h4 class="title">Services</h4>
       <div class="items">
-        <div class="item">
-          <NuxtLink to="/services/slug">
-            <h2>Get free from “The Accounting & Bookkeeping” routine!</h2>
-            <p class="sub">
-              Accounting and bookkeeping need not be overwhelming tasks. We're
-              here to streamline your accounting processes and maintain your
-              financial records with precision.
-            </p>
-            <div class="img">
-              <img src="@/assets/img/service.jpg" alt="" class="pic" />
-              <button>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M7 7L11 12L7 17"
-                    stroke="#023475"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M13 7L17 12L13 17"
-                    stroke="#023475"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </NuxtLink>
-        </div>
-
-        <div class="item">
-          <NuxtLink to="/services/slug">
+        <div v-for="item in services" :key="item.id" class="item">
+          <NuxtLink :to="`/services/${item.slug}`">
             <div>
-              <h2>Planning to “Set business in UAE”?</h2>
+              <h2>{{ item.title }}</h2>
 
               <div class="texts">
-                <div>
+                <div v-for="sub in item.data" :key="sub.id">
                   <h4>
                     <img src="@/assets/img/logo/quote.png" alt="" />
-                    Consulting services:
+                    {{ sub.title }}
                   </h4>
-                  <p>
-                    Our business consulting services extend beyond mere advice;
-                    we are your partners in navigating the complexities of
-                    establishing your company, whether in the mainland...
-                  </p>
-                </div>
-                <div>
-                  <h4>
-                    <img src="@/assets/img/logo/quote.png" alt="" />
-                    Consulting services:
-                  </h4>
-                  <p>
-                    Our business consulting services extend beyond mere advice;
-                    we are your partners in navigating the complexities of
-                    establishing your company, whether in the mainland...
-                  </p>
-                </div>
-                <div>
-                  <h4>
-                    <img src="@/assets/img/logo/quote.png" alt="" />
-                    Consulting services:
-                  </h4>
-                  <p>
-                    Our business consulting services extend beyond mere advice;
-                    we are your partners in navigating the complexities of
-                    establishing your company, whether in the mainland...
-                  </p>
+                  <div class="html" v-html="sub.text"></div>
                 </div>
               </div>
             </div>
 
             <div class="img">
-              <img src="@/assets/img/service.jpg" alt="" class="pic" />
-              <button>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M7 7L11 12L7 17"
-                    stroke="#023475"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M13 7L17 12L13 17"
-                    stroke="#023475"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </NuxtLink>
-        </div>
-
-        <div class="item">
-          <NuxtLink to="/services/slug">
-            <h2>Get free from “The Accounting & Bookkeeping” routine!</h2>
-            <p class="sub">
-              Accounting and bookkeeping need not be overwhelming tasks. We're
-              here to streamline your accounting processes and maintain your
-              financial records with precision.
-            </p>
-            <div class="img">
-              <img src="@/assets/img/service.jpg" alt="" class="pic" />
-              <button>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M7 7L11 12L7 17"
-                    stroke="#023475"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M13 7L17 12L13 17"
-                    stroke="#023475"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </NuxtLink>
-        </div>
-
-        <div class="item">
-          <NuxtLink to="/services/slug">
-            <h2>Get free from “The Accounting & Bookkeeping” routine!</h2>
-            <p class="sub">
-              Accounting and bookkeeping need not be overwhelming tasks. We're
-              here to streamline your accounting processes and maintain your
-              financial records with precision.
-            </p>
-            <div class="img">
-              <img src="@/assets/img/service.jpg" alt="" class="pic" />
+              <img :src="item.image" alt="" class="pic" />
               <button>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -194,7 +54,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["services"],
+};
 </script>
 
 <style scoped>
@@ -222,6 +84,12 @@ export default {};
   padding: 24px;
   background: var(--Apple-Grey, #f5f5f7);
 }
+.item a {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .item:nth-child(1) {
   grid-row-start: 1;
   grid-column-start: 1;
@@ -241,6 +109,7 @@ export default {};
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  gap: 0;
 }
 .item:nth-child(3) {
   grid-row-start: 1;
@@ -322,11 +191,30 @@ export default {};
   height: 20px;
   object-fit: contain;
 }
-.texts p {
+.html :deep(p) {
   color: var(--grey-64, #5d5d5f);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 24px */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item .texts div {
+  display: none;
+}
+.item .texts div:nth-child(1) {
+  display: block;
+}
+.item:nth-child(2) .texts div:nth-child(2),
+.item:nth-child(2) .texts div:nth-child(3) {
+  display: block;
+}
+.html {
+  display: block !important;
 }
 </style>

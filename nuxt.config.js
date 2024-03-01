@@ -25,7 +25,7 @@ export default {
   modules: ["@nuxtjs/axios", "@nuxtjs/i18n"],
 
   axios: {
-    baseURL: "/",
+    baseURL: "https://dunyoapi.pythonanywhere.com/api",
   },
 
   build: {

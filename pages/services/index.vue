@@ -1,14 +1,26 @@
 <template>
   <div class="master">
-    <SiteTop />
-    <HomeServices class="grid" />
+    <SiteTop title="Services" />
+    <HomeServices :services="services" :service="service" class="grid" />
     <HomeContacts />
   </div>
 </template>
 
 <script>
+import servicesApi from "@/api/services";
+
 export default {
   layout: "white",
+
+  async asyncData({ $axios }) {
+    const services = await servicesApi.getServices($axios);
+    const service = await servicesApi.getService($axios);
+
+    return {
+      services,
+      service,
+    };
+  },
 };
 </script>
 

@@ -1,54 +1,24 @@
 <template>
   <div class="master">
-    <SiteTop />
+    <ApplicationModal ref="appModal" />
+
+    <SiteTop :title="service.title" />
 
     <div class="container small">
-      <div class="html">
+      <div v-for="item in service.data" :key="item.id" class="html">
         <h4 class="sub_title">
           <img src="@/assets/img/logo/quote.png" alt="" />
 
-          Accounting and bookkeeping need not be overwhelming tasks. We're here
-          to streamline your accounting processes and maintain your financial
-          records with precision.
+          {{ item.title }}
         </h4>
 
-        <p>
-          Our expert team provides comprehensive bookkeeping and accounting
-          services, ensuring your financial data is accurately recorded and
-          organized for easy access and analysis. Let us take the burden of
-          financial management off your shoulders, making your accounting and
-          bookkeeping effortless and error-free. Trust us to keep your finances
-          in order, allowing you to focus on what you do best: growing your
-          business.
-        </p>
+        <div class="text" v-html="item.text"></div>
 
-        <img src="@/assets/img/image-1.jpg" alt="" />
-      </div>
-
-      <div class="html">
-        <h4 class="sub_title">
-          <img src="@/assets/img/logo/quote.png" alt="" />
-
-          Accounting and bookkeeping need not be overwhelming tasks. We're here
-          to streamline your accounting processes and maintain your financial
-          records with precision.
-        </h4>
-
-        <p>
-          Our expert team provides comprehensive bookkeeping and accounting
-          services, ensuring your financial data is accurately recorded and
-          organized for easy access and analysis. Let us take the burden of
-          financial management off your shoulders, making your accounting and
-          bookkeeping effortless and error-free. Trust us to keep your finances
-          in order, allowing you to focus on what you do best: growing your
-          business.
-        </p>
-
-        <img src="@/assets/img/image-1.jpg" alt="" />
+        <img :src="item.image" alt="" />
       </div>
 
       <div class="button">
-        <button>
+        <button @click="openAppModal()">
           Заказать услугу
 
           <svg
@@ -73,8 +43,30 @@
 </template>
 
 <script>
+import servicesApi from "@/api/services";
+
 export default {
   layout: "white",
+
+  async asyncData({ params, $axios }) {
+    const service = await servicesApi.getService(params.slug, $axios);
+
+    console.log(service);
+
+    return {
+      service,
+    };
+  },
+
+  methods: {
+    openAppModal() {
+      this.$refs.appModal.openModal();
+    },
+
+    closeAppModal() {
+      this.$refs.appModal.closeModal();
+    },
+  },
 };
 </script>
 
@@ -141,5 +133,12 @@ export default {
   object-fit: contain;
   border-radius: 0;
   margin: 0;
+}
+.text :deep(p) {
+  color: var(--grey-80, #353437);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 30px */
 }
 </style>
