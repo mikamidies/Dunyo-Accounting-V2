@@ -48,7 +48,7 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="cardo">
-              <NuxtLink to="/">
+              <NuxtLink to="/news/slug">
                 <div class="img">
                   <img src="@/assets/img/new.jpg" alt="" />
                 </div>
@@ -91,7 +91,7 @@
           </div>
           <div class="swiper-slide">
             <div class="cardo">
-              <NuxtLink to="/">
+              <NuxtLink to="/news/slug">
                 <div class="img">
                   <img src="@/assets/img/new.jpg" alt="" />
                 </div>
@@ -134,7 +134,7 @@
           </div>
           <div class="swiper-slide">
             <div class="cardo">
-              <NuxtLink to="/">
+              <NuxtLink to="/news/slug">
                 <div class="img">
                   <img src="@/assets/img/new.jpg" alt="" />
                 </div>
@@ -177,7 +177,7 @@
           </div>
           <div class="swiper-slide">
             <div class="cardo">
-              <NuxtLink to="/">
+              <NuxtLink to="/news/slug">
                 <div class="img">
                   <img src="@/assets/img/new.jpg" alt="" />
                 </div>

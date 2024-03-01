@@ -13,11 +13,11 @@
           </div>
           <div class="item">
             <p class="sup">E-mail:</p>
-            <a href="#" class="value">info@dunyo.ae</a>
+            <a href="mailto:info@dunyo.ae" class="value">info@dunyo.ae</a>
           </div>
           <div class="item">
             <p class="sup">Head office:</p>
-            <a href="#" class="value">+971 52 246 4048</a>
+            <a href="tel:+971 52 246 4048" class="value">+971 52 246 4048</a>
           </div>
         </div>
       </div>

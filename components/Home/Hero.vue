@@ -1,5 +1,7 @@
 <template>
   <div class="wrap">
+    <ApplicationModal ref="appModal" />
+
     <button class="heroPrev">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +53,7 @@
                   solutions
                 </p>
                 <div class="numbers">
-                  <a href="#" class="button">
+                  <button @click="openAppModal()" class="button">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
@@ -65,8 +67,10 @@
                       />
                     </svg>
                     Связатся с нами
+                  </button>
+                  <a href="tel:+971 52 246 4048" class="tel">
+                    +971 52 246 4048
                   </a>
-                  <a href="#" class="tel"> +971 52 246 4048 </a>
                 </div>
               </div>
             </div>
@@ -82,7 +86,7 @@
                   solutions
                 </p>
                 <div class="numbers">
-                  <a href="#">
+                  <button @click="openAppModal()">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
@@ -96,8 +100,8 @@
                       />
                     </svg>
                     Связатся с нами
-                  </a>
-                  <a href="#"> +971 52 246 4048 </a>
+                  </button>
+                  <a href="tel:+971 52 246 4048"> +971 52 246 4048 </a>
                 </div>
               </div>
             </div>
@@ -113,7 +117,7 @@
                   solutions
                 </p>
                 <div class="numbers">
-                  <a href="#">
+                  <button @click="openAppModal()">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
@@ -127,8 +131,8 @@
                       />
                     </svg>
                     Связатся с нами
-                  </a>
-                  <a href="#"> +971 52 246 4048 </a>
+                  </button>
+                  <a href="tel:+971 52 246 4048"> +971 52 246 4048 </a>
                 </div>
               </div>
             </div>
@@ -162,13 +166,23 @@ export default {
       },
     });
   },
+
+  methods: {
+    openAppModal() {
+      this.$refs.appModal.openModal();
+    },
+
+    closeAppModal() {
+      this.$refs.appModal.closeModal();
+    },
+  },
 };
 </script>
 
 <style scoped>
 .wrap {
   position: relative;
-  height: 764px;
+  height: 100vh;
 }
 .wrap::after {
   background: linear-gradient(
@@ -248,7 +262,7 @@ video {
   gap: 40px;
   margin-top: 48px;
 }
-.numbers a:first-child {
+.numbers button {
   border-radius: 8px;
   background: var(--yellow, #f9e567);
   padding: 12px 24px;

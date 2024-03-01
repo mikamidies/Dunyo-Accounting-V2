@@ -1,5 +1,7 @@
 <template>
   <div class="wrap" id="navbar">
+    <ApplicationModal ref="appModal" />
+
     <div class="container">
       <div class="left">
         <NuxtLink class="brand-main" to="/"
@@ -44,7 +46,7 @@
             />
           </svg>
         </div>
-        <a href="#" class="tel">
+        <button class="tel" @click="openAppModal()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -58,7 +60,7 @@
             />
           </svg>
           Связаться с нами
-        </a>
+        </button>
       </div>
     </div>
   </div>
@@ -66,6 +68,16 @@
 
 <script>
 export default {
+  methods: {
+    openAppModal() {
+      this.$refs.appModal.openModal();
+    },
+
+    closeAppModal() {
+      this.$refs.appModal.closeModal();
+    },
+  },
+
   mounted() {
     function scrollHeader() {
       const navbar = document.getElementById("navbar");
@@ -135,7 +147,7 @@ a img {
   align-items: center;
   gap: 32px;
 }
-.right a {
+.right button {
   border-radius: 8px;
   border: 1px solid var(--yellow, #f9e567);
   padding: 12px 24px;

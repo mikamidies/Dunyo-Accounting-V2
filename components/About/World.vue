@@ -1,5 +1,7 @@
 <template>
   <div class="wrap">
+    <ApplicationModal ref="appModal" />
+
     <div class="container">
       <div class="left">
         <div class="images">
@@ -62,7 +64,7 @@
           </li>
         </ul>
         <div class="button">
-          <a href="#">
+          <button @click="openAppModal()">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -76,7 +78,7 @@
               />
             </svg>
             Связаться с нами
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -84,7 +86,17 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    openAppModal() {
+      this.$refs.appModal.openModal();
+    },
+
+    closeAppModal() {
+      this.$refs.appModal.closeModal();
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -142,7 +154,7 @@ li {
   align-items: baseline;
   gap: 12px;
 }
-.button a {
+.button button {
   border-radius: 8px;
   background: var(--yellow, #f9e567);
   padding: 12px 24px;

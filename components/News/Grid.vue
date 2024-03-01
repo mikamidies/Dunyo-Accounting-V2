@@ -37,7 +37,7 @@
       </div>
       <div class="grid">
         <div class="cardo">
-          <NuxtLink to="/">
+          <NuxtLink to="/news/slug">
             <div class="img">
               <img src="@/assets/img/new.jpg" alt="" />
             </div>
@@ -78,7 +78,7 @@
           </NuxtLink>
         </div>
         <div class="cardo">
-          <NuxtLink to="/">
+          <NuxtLink to="/news/slug">
             <div class="img">
               <img src="@/assets/img/new.jpg" alt="" />
             </div>
@@ -119,7 +119,7 @@
           </NuxtLink>
         </div>
         <div class="cardo">
-          <NuxtLink to="/">
+          <NuxtLink to="/news/slug">
             <div class="img">
               <img src="@/assets/img/new.jpg" alt="" />
             </div>
@@ -160,7 +160,7 @@
           </NuxtLink>
         </div>
         <div class="cardo">
-          <NuxtLink to="/">
+          <NuxtLink to="/news/slug">
             <div class="img">
               <img src="@/assets/img/new.jpg" alt="" />
             </div>

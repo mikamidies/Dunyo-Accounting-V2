@@ -8,6 +8,8 @@
     <HomeFAQ />
     <HomePartners />
     <HomeContacts />
+
+    <ApplicationModal />
   </div>
 </template>
 

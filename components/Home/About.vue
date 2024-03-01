@@ -1,5 +1,7 @@
 <template>
   <div class="wrap">
+    <ApplicationModal ref="appModal" />
+
     <div class="container">
       <div class="left">
         <h4 class="title">
@@ -65,7 +67,7 @@
             <p>Unlock Your Financial Potential with Proven Strategies</p>
           </div>
         </div>
-        <a href="#" class="button">
+        <button @click="openAppModal()" class="button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -79,14 +81,24 @@
             />
           </svg>
           Связатся с нами
-        </a>
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    openAppModal() {
+      this.$refs.appModal.openModal();
+    },
+
+    closeAppModal() {
+      this.$refs.appModal.closeModal();
+    },
+  },
+};
 </script>
 
 <style scoped>
