@@ -2,24 +2,27 @@
   <div class="wrap" id="navbar">
     <div class="container">
       <div class="left">
-        <NuxtLink to="/"
+        <NuxtLink class="brand-main" to="/"
           ><img src="@/assets/img/logo/brand.svg" alt=""
+        /></NuxtLink>
+        <NuxtLink class="brand-colored" to="/"
+          ><img src="@/assets/img/logo/colored.svg" alt=""
         /></NuxtLink>
         <ul>
           <li>
-            <NuxtLink to="/"> Main </NuxtLink>
+            <NuxtLink class="link" to="/"> Main </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/"> About us </NuxtLink>
+            <NuxtLink class="link" to="/about"> About us </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/"> Services </NuxtLink>
+            <NuxtLink class="link" to="/"> Services </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/"> News </NuxtLink>
+            <NuxtLink class="link" to="/news"> News </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/"> Contacts </NuxtLink>
+            <NuxtLink class="link" to="/"> Contacts </NuxtLink>
           </li>
         </ul>
       </div>
@@ -78,6 +81,12 @@ export default {
 </script>
 
 <style scoped>
+.brand-main {
+  display: block;
+}
+.brand-colored {
+  display: none;
+}
 .wrap {
   padding: 40px 0;
   color: white;
@@ -108,7 +117,7 @@ export default {
   gap: 40px;
 }
 .left a {
-  color: var(--White, #fff) !important;
+  color: var(--White, #fff);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;

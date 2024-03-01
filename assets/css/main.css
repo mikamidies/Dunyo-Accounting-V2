@@ -182,5 +182,5 @@ input:focus {
   outline: none;
 }
 .nuxt-link-exact-active {
-  color: var(--blue) !important;
+  color: #f9e567 !important;
 }
