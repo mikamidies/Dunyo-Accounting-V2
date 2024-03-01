@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap" v-if="!$route.name.includes('contacts')">
+  <div class="wrap">
     <img src="@/assets/img/footer-bird.png" class="bird" alt="" />
 
     <div class="container">
@@ -11,8 +11,8 @@
             request a call back, and we will tell you everything ourselves
           </ps>
         </div>
-        <div class="sec"></div>
-        <div class="sec items">
+        <!-- <div class="sec"></div> -->
+        <div class="sec items" style="justify-items: end">
           <div class="item">
             <p class="sup">Phone number</p>
             <a href="#" class="value">+971 52 246 4048</a>
@@ -22,7 +22,7 @@
             <a href="#" class="value"> info@dunyo.ae </a>
           </div>
         </div>
-        <div class="sec ender">
+        <!-- <div class="sec ender">
           <div>
             <div class="email">
               <span class="logo"
@@ -65,7 +65,7 @@
               </button>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="sec">
           <p class="sup">Address</p>
           <p class="value">

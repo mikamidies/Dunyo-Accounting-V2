@@ -16,7 +16,7 @@
             <NuxtLink class="link" to="/about"> About us </NuxtLink>
           </li>
           <li>
-            <NuxtLink class="link" to="/"> Services </NuxtLink>
+            <NuxtLink class="link" to="/services"> Services </NuxtLink>
           </li>
           <li>
             <NuxtLink class="link" to="/news"> News </NuxtLink>
@@ -57,7 +57,7 @@
               fill="#F9E567"
             />
           </svg>
-          Свяжется с нами
+          Связаться с нами
         </a>
       </div>
     </div>
@@ -83,9 +83,16 @@ export default {
 <style scoped>
 .brand-main {
   display: block;
+  width: 105px;
 }
 .brand-colored {
   display: none;
+  width: 105px;
+}
+a img {
+  width: 105px;
+  height: 105px;
+  object-fit: contain;
 }
 .wrap {
   padding: 40px 0;
