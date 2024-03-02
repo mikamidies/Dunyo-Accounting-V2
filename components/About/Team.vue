@@ -5,44 +5,12 @@
         Manage all areas companies that are genuinely involved specialists
       </h4>
       <div class="grid">
-        <div class="item">
+        <div class="item" v-for="item in staff" :key="item.id">
           <div class="img">
-            <img src="@/assets/img/person-1.jpg" alt="" />
+            <img :src="item.image" alt="" />
           </div>
-          <p class="name">Rustamov G’ayrat</p>
-          <p class="status">Генеральный директор</p>
-          <a href="#" class="mail"> info@dunyo.ae </a>
-        </div>
-        <div class="item">
-          <div class="img">
-            <img src="@/assets/img/person-2.jpg" alt="" />
-          </div>
-          <p class="name">Rustamov G’ayrat</p>
-          <p class="status">Генеральный директор</p>
-          <a href="#" class="mail"> info@dunyo.ae </a>
-        </div>
-        <div class="item">
-          <div class="img">
-            <img src="@/assets/img/person-3.jpg" alt="" />
-          </div>
-          <p class="name">Rustamov G’ayrat</p>
-          <p class="status">Генеральный директор</p>
-          <a href="#" class="mail"> info@dunyo.ae </a>
-        </div>
-        <div class="item">
-          <div class="img">
-            <img src="@/assets/img/person-4.jpg" alt="" />
-          </div>
-          <p class="name">Rustamov G’ayrat</p>
-          <p class="status">Генеральный директор</p>
-          <a href="#" class="mail"> info@dunyo.ae </a>
-        </div>
-        <div class="item">
-          <div class="img">
-            <img src="@/assets/img/person-5.jpg" alt="" />
-          </div>
-          <p class="name">Rustamov G’ayrat</p>
-          <p class="status">Генеральный директор</p>
+          <p class="name">{{ item.title }}</p>
+          <p class="status">{{ item.subtitle }}</p>
           <a href="#" class="mail"> info@dunyo.ae </a>
         </div>
       </div>
@@ -51,7 +19,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["staff"],
+};
 </script>
 
 <style scoped>
@@ -83,6 +53,7 @@ export default {};
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 40px;
 }
 .img img {
   width: 230px;

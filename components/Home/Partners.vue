@@ -43,29 +43,8 @@
 
       <div class="swiper partnersSwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="@/assets/img/logo/part-1.png" alt="" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/logo/part-2.png" alt="" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/logo/part-3.png" alt="" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/logo/part-4.png" alt="" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/logo/part-1.png" alt="" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/logo/part-2.png" alt="" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/logo/part-3.png" alt="" />
-          </div>
-          <div class="swiper-slide">
-            <img src="@/assets/img/logo/part-4.png" alt="" />
+          <div class="swiper-slide" v-for="item in partners" :key="item.id">
+            <img :src="item.image" alt="" />
           </div>
         </div>
       </div>
@@ -78,6 +57,8 @@ import Swiper from "swiper/swiper-bundle.js";
 import "swiper/swiper-bundle.min.css";
 
 export default {
+  props: ["partners"],
+
   mounted() {
     new Swiper(".partnersSwiper", {
       slidesPerView: 4,
@@ -140,7 +121,7 @@ export default {
 }
 .swiper-slide img {
   width: 182px;
-  height: auto;
+  height: 70%;
   object-fit: contain;
 }
 </style>

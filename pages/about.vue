@@ -3,15 +3,28 @@
     <AboutTop />
     <AboutWorld />
     <AboutContent />
-    <AboutImages />
+    <AboutImages :media="media" />
     <AboutWhy />
-    <AboutTeam />
+    <AboutTeam :staff="staff" />
     <HomeContacts />
   </div>
 </template>
 
 <script>
-export default {};
+import mediaApi from "@/api/media";
+import staffApi from "@/api/staff";
+
+export default {
+  async asyncData({ $axios }) {
+    const staff = await staffApi.getStaff($axios);
+    const media = await mediaApi.getMedia($axios);
+
+    return {
+      staff,
+      media,
+    };
+  },
+};
 </script>
 
 <style scoped></style>

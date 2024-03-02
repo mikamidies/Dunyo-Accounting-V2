@@ -1,14 +1,20 @@
 <template>
   <div class="wrap">
+    <ApplicationModal ref="appModal" />
+
     <div class="container">
       <h4 class="title">FAQ</h4>
       <div class="grid">
         <div class="left">
           <div class="buttons">
-            <button class="active">What is financial navigation?</button>
-            <button>How can I navigate financial complexities?</button>
-            <button>What solutions can I craft for my financial goals?</button>
-            <button>Why is financial literacy important?</button>
+            <button
+              v-for="item in faq"
+              :key="item.id"
+              @click="activeTab = item.id"
+              :class="{ active: activeTab == item.id }"
+            >
+              {{ item.question }}
+            </button>
           </div>
         </div>
         <div class="right">
@@ -16,17 +22,18 @@
             <div class="cardo">
               <img src="@/assets/img/palm.png" alt="" class="palm" />
 
-              <div class="content">
-                <h4 class="name">What is financial navigation?</h4>
-                <p class="sub">
-                  Financial navigation entails the strategic management and
-                  understanding of financial data, trends, and indicators to
-                  make informed decisions.
-                </p>
+              <div
+                class="content"
+                v-for="item in faq"
+                :key="item.id"
+                :class="{ active: activeTab == item.id }"
+              >
+                <h4 class="name">{{ item.question }}</h4>
+                <div class="sub" v-html="item.answer"></div>
               </div>
 
-              <div class="call">
-                <a href="#">
+              <div class="call" @click="openAppModal()">
+                <button>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -39,8 +46,9 @@
                       fill="#216FBF"
                     />
                   </svg>
+
                   Связаться с нами
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -51,7 +59,25 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      activeTab: 1,
+    };
+  },
+
+  props: ["faq"],
+
+  methods: {
+    openAppModal() {
+      this.$refs.appModal.openModal();
+    },
+
+    closeAppModal() {
+      this.$refs.appModal.closeModal();
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -102,8 +128,7 @@ export default {};
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 522px;
+  gap: 232px;
 }
 .palm {
   position: absolute;
@@ -127,7 +152,7 @@ export default {};
   font-weight: 400;
   line-height: 150%; /* 30px */
 }
-.call a {
+.call button {
   color: #216fbf;
   font-size: 18px;
   font-style: normal;
@@ -139,5 +164,11 @@ export default {};
   gap: 24px;
   border-radius: 8px;
   background: #f9f9fa;
+}
+.content {
+  display: none;
+}
+.content.active {
+  display: block;
 }
 </style>

@@ -2,19 +2,16 @@
   <div class="wrap">
     <div class="container">
       <div class="grid">
-        <img id="one" src="@/assets/img/image-1.jpg" alt="" />
-        <img id="two" src="@/assets/img/image-2.jpg" alt="" />
-        <img id="three" src="@/assets/img/image-3.jpg" alt="" />
-        <img id="four" src="@/assets/img/image-4.jpg" alt="" />
-        <img id="five" src="@/assets/img/image-5.jpg" alt="" />
-        <img id="six" src="@/assets/img/image-6.jpg" alt="" />
+        <img v-for="item in media" :key="item.id" :src="item.image" alt="" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["media"],
+};
 </script>
 
 <style scoped>
@@ -31,37 +28,37 @@ export default {};
   grid-template-columns: 1fr 1fr 1fr;
   gap: 8px;
 }
-#one {
+img:nth-child(1) {
   grid-row-start: 1;
   grid-column-start: 1;
   grid-row-end: 2;
   grid-column-end: 2;
 }
-#two {
+img:nth-child(2) {
   grid-row-start: 1;
   grid-column-start: 2;
   grid-row-end: 2;
   grid-column-end: 3;
 }
-#three {
+img:nth-child(3) {
   grid-row-start: 1;
   grid-column-start: 3;
   grid-row-end: 2;
   grid-column-end: 4;
 }
-#four {
+img:nth-child(4) {
   grid-row-start: 2;
   grid-column-start: 1;
   grid-row-end: 4;
   grid-column-end: 3;
 }
-#five {
+img:nth-child(5) {
   grid-row-start: 2;
   grid-column-start: 3;
   grid-row-end: 3;
   grid-column-end: 4;
 }
-#six {
+img:nth-child(6) {
   grid-row-start: 3;
   grid-column-start: 3;
   grid-row-end: 4;
