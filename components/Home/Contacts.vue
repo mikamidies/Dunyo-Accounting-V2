@@ -26,10 +26,15 @@
           <h4 class="par">
             Get in Touch: Reach Out to Us for Expert Financial Assistance
           </h4>
-          <form action="">
-            <input type="text" placeholder="Phone number" required />
-            <input type="text" placeholder="E-mail" required />
-            <input type="text" placeholder="Comments" />
+          <form @submit.prevent="onSubmit">
+            <input
+              type="number"
+              placeholder="Phone number"
+              required
+              v-model="number"
+            />
+            <input type="email" placeholder="E-mail" required v-model="email" />
+            <input type="text" placeholder="Comments" v-model="message" />
             <div class="check">
               <input type="checkbox" id="check" required />
               <label for="check"
@@ -72,7 +77,54 @@
 </template>
 
 <script>
-export default {};
+import formApi from "@/api/form";
+
+export default {
+  data() {
+    return {
+      modalHandle: false,
+      number: "",
+      email: "",
+      message: "",
+    };
+  },
+
+  methods: {
+    async onSubmit() {
+      const formData = {
+        email: this.email,
+        number: this.number,
+        message: this.message,
+      };
+
+      const res = await formApi.sendForm(formData);
+
+      if (res && res.status === 201) {
+        this.$notification["success"]({
+          message: "Succesfully sent!",
+        });
+      } else {
+        this.$notification["error"]({
+          message: "Error!",
+        });
+      }
+
+      this.email = "";
+      this.number = "";
+      this.message - "";
+
+      this.closeModal();
+    },
+
+    openModal() {
+      this.modalHandle = true;
+    },
+
+    closeModal() {
+      this.modalHandle = false;
+    },
+  },
+};
 </script>
 
 <style scoped>
