@@ -214,6 +214,7 @@ video {
   top: 0;
   z-index: 10;
   opacity: 0.2;
+  height: 100%;
 }
 .container {
   height: 100%;
@@ -330,5 +331,75 @@ video {
 }
 .heroNext svg {
   transform: rotate(180deg);
+}
+@media screen and (max-width: 1024px) {
+  .wrap {
+    overflow: hidden;
+  }
+  .sup {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 12px;
+  }
+  .title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    margin-bottom: 12px;
+  }
+  .sub {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+  }
+  .numbers {
+    flex-direction: column;
+    margin-top: 32px;
+    gap: 8px;
+  }
+  .numbers button {
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 24px;
+  }
+  .numbers a:last-child {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+  }
+  .heroNext,
+  .heroPrev {
+    display: none;
+  }
+  .slider {
+    height: 95%;
+  }
+  .tags {
+    gap: 8px;
+    overflow-x: auto;
+    margin-right: -16px;
+    padding-right: 16px;
+  }
+  .tags::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .tags {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .tag {
+    white-space: nowrap;
+  }
+  .bird {
+    display: none;
+  }
 }
 </style>

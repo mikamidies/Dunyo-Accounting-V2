@@ -230,6 +230,8 @@ export default {
 }
 .cats button.disabled {
   pointer-events: none;
+  background: var(--blue);
+  color: white;
 }
 .name {
   color: var(--black);

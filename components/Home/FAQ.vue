@@ -171,4 +171,60 @@ export default {
 .content.active {
   display: block;
 }
+@media screen and (max-width: 1024px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .cardo {
+    padding: 16px;
+    gap: 24px;
+    border-radius: 8px;
+    background: var(--White, #fff);
+  }
+  .name {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    margin-bottom: 8px;
+  }
+  .sub {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .palm {
+    display: none;
+  }
+  .call button {
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    padding: 12px;
+  }
+  .buttons button {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+  .wrap {
+    padding: 48px 0;
+  }
+}
 </style>

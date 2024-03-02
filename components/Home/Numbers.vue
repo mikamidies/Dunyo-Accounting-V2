@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-    <img src="@/assets/img/hero-bird.png" class="bird" alt="" />
+    <img src="@/assets/img/news-bird.png" class="bird" alt="" />
   </div>
 </template>
 
@@ -100,5 +100,39 @@ export default {};
 .num p {
   position: relative;
   z-index: 2;
+}
+@media screen and (max-width: 1024px) {
+  .items {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  .wrap {
+    padding: 48px 0;
+  }
+  .title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 24px;
+  }
+  .num {
+    margin-bottom: 8px;
+  }
+  .num p {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+  .sub {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+  }
+  .bird {
+    right: -30%;
+  }
 }
 </style>

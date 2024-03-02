@@ -6,7 +6,7 @@
         <div v-for="item in services" :key="item.id" class="item">
           <NuxtLink :to="`/services/${item.slug}`">
             <div>
-              <h2>{{ item.title }}</h2>
+              <h2 class="name">{{ item.title }}</h2>
 
               <div class="texts">
                 <div v-for="sub in item.data" :key="sub.id">
@@ -216,5 +216,96 @@ export default {
 }
 .html {
   display: block !important;
+}
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 48px 0;
+  }
+  .title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 24px;
+  }
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+    row-gap: 16px;
+  }
+  .item:nth-child(1) {
+    width: calc(50% - 8px);
+    order: 0;
+    margin-right: 8px;
+  }
+  .item:nth-child(2) {
+    width: 100%;
+    order: 2;
+  }
+  .item:nth-child(3) {
+    width: calc(50% - 8px);
+    order: 1;
+    margin-left: 8px;
+  }
+  .item:nth-child(4) {
+    width: calc(50% - 8px);
+    order: 3;
+    margin-right: 8px;
+  }
+  .item:nth-child(5) {
+    width: calc(50% - 8px);
+    order: 4;
+    margin-left: 8px;
+  }
+  .item {
+    border-radius: 8px;
+    background: #f9f9fa;
+    padding: 12px 8px;
+  }
+  .name {
+    color: var(--Black, #020105);
+    font-family: var(--decor-sm);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 16.8px */
+    margin-bottom: 0;
+  }
+  .texts {
+    margin-top: 8px;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .texts img {
+    display: none;
+  }
+  .texts h4 {
+    color: var(--Black, #020105);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 14px */
+    margin: 0;
+  }
+  .html :deep(p) {
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .img {
+    justify-content: space-between;
+  }
+  .img img {
+    width: 120px;
+    height: 70px;
+  }
+  .img button {
+    width: 16px;
+    height: 16px;
+    border: 0;
+    padding: 0;
+  }
 }
 </style>

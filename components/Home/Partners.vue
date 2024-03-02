@@ -61,11 +61,16 @@ export default {
 
   mounted() {
     new Swiper(".partnersSwiper", {
-      slidesPerView: 4,
+      slidesPerView: 2,
       loop: true,
       navigation: {
         nextEl: ".partNext",
         prevEl: ".partPrev",
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+        },
       },
     });
   },
@@ -123,5 +128,31 @@ export default {
   width: 182px;
   height: 70%;
   object-fit: contain;
+}
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 48px 0;
+  }
+  .title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+  .buttons {
+    display: none;
+  }
+  .header {
+    margin-bottom: 24px;
+  }
+  .swiper-slide {
+    height: 74px;
+  }
+  .swiper-slide img {
+    width: 80%;
+  }
+  .swiper {
+    border-right: 1px solid #ebebeb;
+  }
 }
 </style>

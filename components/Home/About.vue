@@ -159,4 +159,47 @@ export default {
   font-weight: 500;
   line-height: 150%; /* 27px */
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 48px 0;
+    background: none;
+  }
+  .title {
+    margin-bottom: 24px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+  .sub {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    margin-bottom: 24px;
+  }
+  .items {
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .item {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 10px;
+    align-items: baseline;
+  }
+  .item p {
+    color: var(--grey-80, #353437);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 19.6px */
+  }
+  .button {
+    width: 100%;
+    padding: 10px 24px;
+    justify-content: center;
+    gap: 8px;
+  }
+}
 </style>

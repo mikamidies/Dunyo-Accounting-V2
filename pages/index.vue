@@ -36,4 +36,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.master {
+  overflow-x: hidden;
+}
+</style>

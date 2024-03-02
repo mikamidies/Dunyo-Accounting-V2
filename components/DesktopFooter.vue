@@ -352,4 +352,81 @@ export default {};
 .by a {
   color: #f9e567 !important;
 }
+@media screen and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  .items {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: flex-start !important;
+  }
+  .bird {
+    display: none;
+  }
+  .wrap {
+    padding: 48px 0;
+  }
+  .title {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%; /* 19.8px */
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .sub {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .sup {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    margin-bottom: 4px;
+  }
+  .value {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 30px */
+    text-transform: uppercase;
+  }
+  .ender {
+    align-items: flex-start;
+  }
+  .bottom {
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .bottom ul {
+    order: 0;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    gap: 40px;
+    justify-content: flex-start;
+    row-gap: 24px;
+  }
+  .bottom p {
+    order: 1;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .by,
+  .by a {
+    order: 2;
+    text-align: left;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}
 </style>

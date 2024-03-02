@@ -100,10 +100,17 @@ export default {
 
   mounted() {
     new Swiper(this.$refs.newsSwiper, {
-      slidesPerView: 3,
+      slidesPerView: 1.3,
+      spaceBetween: 16,
       navigation: {
         prevEl: ".newsPrev",
         nextEl: ".newsNext",
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 0,
+        },
       },
     });
   },
@@ -245,5 +252,62 @@ export default {
 .swiper {
   min-width: 0;
   display: block;
+}
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 64px 0;
+  }
+  .title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+  .header {
+    margin-bottom: 24px;
+  }
+  .buttons {
+    display: none;
+  }
+  .bird {
+    top: 50%;
+    transform: translateY(-50%);
+    right: -30%;
+  }
+  .cardo a {
+    padding: 0;
+  }
+  .swiper {
+    margin-right: -16px;
+    padding-right: 16px;
+  }
+  .img img {
+    height: 156px;
+  }
+  .tag {
+    padding: 4px 8px;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .name {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    margin-bottom: 4px;
+  }
+  .sub {
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    max-width: 90%;
+    -webkit-line-clamp: 2;
+  }
+  .cardo {
+    height: 330px;
+  }
 }
 </style>

@@ -233,4 +233,83 @@ input {
   width: 100%;
   min-height: 100%;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding-bottom: 48px;
+  }
+  .title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+  .top {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  .right {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 8px;
+  }
+  .sup {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    margin: 0;
+  }
+  .value {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+  }
+  .par {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    margin-bottom: 24px;
+  }
+  input {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+  .check {
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  .check input {
+    margin: 0;
+  }
+  .check label {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+  }
+  .form button {
+    width: 100%;
+    padding: 10px 24px;
+    height: 40px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    gap: 8px;
+  }
+  .bottom {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .form {
+    min-height: auto;
+  }
+  .bottom iframe {
+    height: 320px;
+  }
+}
 </style>
