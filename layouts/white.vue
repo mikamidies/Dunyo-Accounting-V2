@@ -41,4 +41,9 @@ main {
 .white {
   background: white !important;
 }
+@media screen and (max-width: 1024px) {
+  .white {
+    display: none;
+  }
+}
 </style>

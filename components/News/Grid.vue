@@ -337,4 +337,66 @@ export default {
   font-weight: 400;
   line-height: 150%; /* 27px */
 }
+@media screen and (max-width: 1024px) {
+  .search {
+    padding-bottom: 9px;
+    gap: 8px;
+  }
+  .search input {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardo a {
+    display: grid;
+    grid-template-columns: 122px 1fr;
+    gap: 12px;
+  }
+  .tags {
+    position: absolute;
+    margin: 0;
+    right: 134px;
+    top: 0;
+  }
+  .name {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    padding-top: 24px;
+  }
+  .sub {
+    display: none;
+  }
+  .cardo {
+    position: relative;
+    height: auto;
+  }
+  .img img {
+    height: 72px;
+  }
+  .tag {
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    padding: 2px 8px;
+  }
+  .date {
+    border-bottom: 0;
+  }
+  .date span {
+    display: none;
+  }
+  .date p {
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+  }
+}
 </style>
