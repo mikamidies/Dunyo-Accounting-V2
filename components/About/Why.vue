@@ -251,12 +251,18 @@ import "swiper/swiper-bundle.min.css";
 export default {
   mounted() {
     new Swiper(".whySwiper", {
-      slidesPerView: 3,
+      slidesPerView: 1,
       spaceBetween: 16,
       loop: true,
       navigation: {
         nextEl: ".whyNext",
         prevEl: ".whyPrev",
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 16,
+        },
       },
     });
   },
@@ -326,5 +332,49 @@ export default {
 }
 .icon {
   padding: 24px;
+}
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 48px 0 120px 0;
+    position: relative;
+  }
+  .title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+  .header {
+    margin-bottom: 24px;
+  }
+  .buttons {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .name {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    margin-bottom: 16px;
+  }
+  .sub {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+  }
+  .cardo {
+    height: 270px;
+  }
+  svg {
+    width: 80px;
+    height: 80px;
+  }
+  .icon {
+    padding: 0;
+  }
 }
 </style>

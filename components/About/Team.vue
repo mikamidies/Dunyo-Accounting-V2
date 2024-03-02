@@ -91,4 +91,44 @@ export default {
   display: flex;
   justify-content: center;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 48px 0;
+  }
+  .title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 24px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .item {
+    padding: 12px;
+  }
+  .img img {
+    width: 120px;
+    height: 120px;
+  }
+  .img {
+    margin-bottom: 24px;
+  }
+  .name {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 4px;
+  }
+  .status,
+  .mail {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    margin-bottom: 4px;
+  }
+}
 </style>

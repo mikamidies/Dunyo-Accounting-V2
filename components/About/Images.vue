@@ -71,4 +71,28 @@ img {
   border-radius: 0px 0px 0px 8px;
   border: 1px solid rgba(255, 255, 255, 0.16);
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding-bottom: 48px;
+  }
+  .grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+  .grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-right: -16px;
+    padding-right: 16px;
+  }
+  img {
+    width: 270px;
+    height: 164px;
+    object-fit: cover;
+  }
+}
 </style>

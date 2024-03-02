@@ -81,4 +81,37 @@ export default {};
   max-width: 600px;
   margin: 0 auto;
 }
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .crumbs ol {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 16px;
+  }
+  .sub {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 16px;
+  }
+  .txt {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+  }
+  .wrap {
+    padding-top: 100px;
+  }
+}
 </style>

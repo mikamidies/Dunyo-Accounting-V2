@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="nums">
-        <HomeNumbers />
+        <HomeNumbers class="nums" />
       </div>
     </div>
   </div>
@@ -89,5 +89,38 @@ export default {};
 }
 .right span {
   color: #f9e567;
+}
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding-bottom: 48px;
+  }
+  .title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 16px;
+  }
+  .texts {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+  }
+  .left p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    margin-bottom: 16px;
+  }
+  .right p {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 140%;
+    display: flex;
+  }
+  .nums :deep(.container) {
+    padding: 0;
+  }
 }
 </style>

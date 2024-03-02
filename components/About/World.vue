@@ -167,4 +167,41 @@ li {
   font-weight: 500;
   line-height: 150%; /* 27px */
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 48px 0;
+    background: var(--Elegan-dark-blue, #023475);
+  }
+  .wrap::before,
+  .wrap::after {
+    display: none;
+  }
+  .images {
+    margin-bottom: 24px;
+  }
+  .images img {
+    width: 40px;
+    height: auto;
+    object-fit: contain;
+  }
+  ul {
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  li {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .button button {
+    width: 100%;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    justify-content: center;
+    gap: 8px;
+  }
+}
 </style>
