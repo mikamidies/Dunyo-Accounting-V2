@@ -19,22 +19,34 @@
                 stroke-linejoin="round"
               />
             </svg>
-            <input type="text" placeholder="Search" />
+            <input v-model="search" type="text" placeholder="Search" />
           </div>
-          <div class="sort">
+          <!-- <div class="sort">
             <a-select default-value="lucy">
               <a-select-option value="jack"> Jack </a-select-option>
               <a-select-option value="lucy"> Lucy </a-select-option>
             </a-select>
-          </div>
+          </div> -->
         </div>
         <div class="cats">
-          <button v-for="category in newsCategories" :key="category.id">
+          <button
+            :class="{ disabled: Object.keys($route.query).length == 0 }"
+            @click="allNews()"
+          >
+            All News
+          </button>
+          <button
+            v-for="category in newsCategories"
+            :key="category.id"
+            @click="sortCategory(category.id)"
+            :class="{ disabled: $route.query.category == category.id }"
+          >
             {{ category.title }}
           </button>
         </div>
       </div>
-      <div class="grid">
+
+      <div class="grid" v-if="news.length > 0">
         <div v-for="item in news" :key="item.id" class="cardo">
           <NuxtLink :to="`/news/${item.slug}`">
             <div class="img">
@@ -73,13 +85,93 @@
           </NuxtLink>
         </div>
       </div>
+      <div class="empty" v-else>
+        <p>No Data</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import newsApi from "@/api/news";
+
 export default {
-  props: ["news", "newsCategories"],
+  props: ["newsCategories"],
+
+  data() {
+    return {
+      search: "",
+      news: "",
+    };
+  },
+
+  async fetch() {
+    const newsData = await newsApi.getNews(this.$axios, {
+      params: this.$route.query,
+    });
+
+    this.news = newsData;
+  },
+
+  mounted() {},
+
+  methods: {
+    async sortCategory(value) {
+      let query = { ...this.$route.query };
+      query.category = value;
+      if (!Object.keys(this.$route.query).includes(`${value}`)) {
+        await this.$router.replace(
+          this.localePath({
+            path: this.$route.path,
+            query: query,
+          })
+        );
+      }
+
+      this.changeNews();
+      console.log(this.$route.query);
+    },
+
+    async changeNews() {
+      const newsData = await newsApi.getNews(this.$axios, {
+        params: this.$route.query,
+        // headers: {
+        //   language: this.$i18n.locale,
+        // },
+      });
+
+      this.news = newsData;
+    },
+
+    async allNews() {
+      await this.$router.replace(
+        this.localePath({
+          path: `/news`,
+        })
+      );
+      this.changeNews();
+    },
+  },
+
+  watch: {
+    async search(val) {
+      if (val.length > 2) {
+        const data = await newsApi.getNews(this.$axios, {
+          params: { search: val },
+          // headers: {
+          //   language: this.$i18n.locale,
+          // },
+        });
+
+        this.news = data;
+      }
+      if (val.length == 0) {
+        const data = await newsApi.getNews(this.$axios, {});
+
+        this.news = data;
+      }
+    },
+  },
 };
 </script>
 
@@ -87,7 +179,7 @@ export default {
 .top {
   margin-bottom: 24px;
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr;
   gap: 64px;
   margin-top: 40px;
 }
@@ -96,6 +188,16 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   margin-top: 40px;
+}
+.empty {
+  margin-top: 40px;
+}
+.empty p {
+  color: var(--black);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
 }
 .img img {
   width: 100%;
@@ -126,6 +228,9 @@ export default {
   font-weight: 400;
   line-height: 140%; /* 19.6px */
 }
+.cats button.disabled {
+  pointer-events: none;
+}
 .name {
   color: var(--black);
   font-size: 24px;
@@ -151,6 +256,9 @@ export default {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.sub :deep(a) {
+  color: #5d5d5f;
 }
 .date {
   display: flex;

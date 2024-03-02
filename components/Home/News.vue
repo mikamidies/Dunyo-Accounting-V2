@@ -205,6 +205,9 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.sub :deep(a) {
+  color: white;
+}
 .date {
   display: flex;
   align-items: center;

@@ -1,10 +1,12 @@
 export default {
-  async getNews(axios) {
+  async getNews(axios, params) {
     try {
       let res;
 
       if (axios) {
-        res = await axios.get("/news");
+        res = await axios.get("/news", {
+          ...params,
+        });
 
         return res.data.results;
       }

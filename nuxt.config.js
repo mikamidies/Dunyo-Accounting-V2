@@ -41,4 +41,12 @@ export default {
       ];
     },
   },
+
+  i18n: {
+    locales: ["ru", "en"],
+    defaultLocale: "ru",
+    vueI18n: {
+      fallbackLocale: "ru",
+    },
+  },
 };
