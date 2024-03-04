@@ -43,14 +43,14 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="content">
-                <p class="sup">{{ $store.state.translations["main.hello"] }}</p>
+                <p class="sup">
+                  {{ $store.state.translations["main.hero-sup"] }}
+                </p>
                 <h4 class="title">
-                  Navigating through the numbers and developing customized
-                  solutions
+                  {{ $store.state.translations["main.hero-title"] }}
                 </h4>
                 <p class="sub">
-                  Navigating through the numbers and developing customized
-                  solutions
+                  {{ $store.state.translations["main.hero-sub"] }}
                 </p>
                 <div class="numbers">
                   <button @click="openAppModal()" class="button">
@@ -66,7 +66,7 @@
                         fill="#866719"
                       />
                     </svg>
-                    Связатся с нами
+                    {{ $store.state.translations["main.contact-us"] }}
                   </button>
                   <a :href="`tel:${info.nbm}`" class="tel">
                     {{ info?.nbm }}
@@ -76,14 +76,14 @@
             </div>
             <div class="swiper-slide">
               <div class="content">
-                <p class="sup">Trust. Accuracy. Growth</p>
+                <p class="sup">
+                  {{ $store.state.translations["main.hero-sup"] }}
+                </p>
                 <h4 class="title">
-                  Navigating through the numbers and developing customized
-                  solutions
+                  {{ $store.state.translations["main.hero-title"] }}
                 </h4>
                 <p class="sub">
-                  Navigating through the numbers and developing customized
-                  solutions
+                  {{ $store.state.translations["main.hero-sub"] }}
                 </p>
                 <div class="numbers">
                   <button @click="openAppModal()">
@@ -99,7 +99,7 @@
                         fill="#866719"
                       />
                     </svg>
-                    Связатся с нами
+                    {{ $store.state.translations["main.contact-us"] }}
                   </button>
                   <a :href="`tel:${info.nbm}`" class="tel">
                     {{ info?.nbm }}
@@ -109,14 +109,14 @@
             </div>
             <div class="swiper-slide">
               <div class="content">
-                <p class="sup">Trust. Accuracy. Growth</p>
+                <p class="sup">
+                  {{ $store.state.translations["main.hero-sup"] }}
+                </p>
                 <h4 class="title">
-                  Navigating through the numbers and developing customized
-                  solutions
+                  {{ $store.state.translations["main.hero-title"] }}
                 </h4>
                 <p class="sub">
-                  Navigating through the numbers and developing customized
-                  solutions
+                  {{ $store.state.translations["main.hero-sub"] }}
                 </p>
                 <div class="numbers">
                   <button @click="openAppModal()">
@@ -132,7 +132,7 @@
                         fill="#866719"
                       />
                     </svg>
-                    Связатся с нами
+                    {{ $store.state.translations["main.contact-us"] }}
                   </button>
                   <a :href="`tel:${info.nbm}`" class="tel">
                     {{ info?.nbm }}

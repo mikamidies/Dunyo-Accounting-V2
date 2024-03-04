@@ -22,7 +22,7 @@
               stroke-linejoin="round"
             />
           </svg>
-          All services
+          {{ $store.state.translations["inner.all-news"] }}
         </NuxtLink>
       </div>
 
@@ -44,7 +44,7 @@
 
       <div class="button">
         <button @click="openAppModal()">
-          Заказать услугу
+          {{ $store.state.translations["main.contact-title"] }}
 
           <svg
             xmlns="http://www.w3.org/2000/svg"

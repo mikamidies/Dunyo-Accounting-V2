@@ -4,7 +4,7 @@
 
     <div class="container">
       <div class="header">
-        <h4 class="title">News</h4>
+        <h4 class="title">{{ $store.state.translations["main.news"] }}</h4>
 
         <div class="buttons">
           <div class="newsPrev">

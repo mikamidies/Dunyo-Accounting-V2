@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="container">
       <h4 class="title">
-        Manage all areas companies that are genuinely involved specialists
+        {{ $store.state.translations["about.staff-title"] }}
       </h4>
       <div class="grid">
         <div class="item" v-for="item in staff" :key="item.id">
@@ -11,7 +11,7 @@
           </div>
           <p class="name">{{ item.title }}</p>
           <p class="status">{{ item.subtitle }}</p>
-          <a href="#" class="mail"> info@dunyo.ae </a>
+          <a :href="item.email" class="mail"> {{ item.email }} </a>
         </div>
       </div>
     </div>

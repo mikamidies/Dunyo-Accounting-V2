@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="container">
       <div class="header">
-        <h4 class="title">Partners</h4>
+        <h4 class="title">{{ $store.state.translations["main.partners"] }}</h4>
         <div class="buttons">
           <div class="partPrev">
             <svg
@@ -71,6 +71,9 @@ export default {
         1024: {
           slidesPerView: 4,
         },
+      },
+      autoplay: {
+        delay: 2000,
       },
     });
   },

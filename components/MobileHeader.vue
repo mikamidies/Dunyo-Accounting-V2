@@ -1,5 +1,7 @@
 <template>
   <div class="wrap">
+    <ApplicationModal ref="appModal" />
+
     <div class="container">
       <div class="top">
         <div class="left">
@@ -15,7 +17,7 @@
                   <NuxtLink :to="switchLocalePath('en')">English</NuxtLink>
                 </a-menu-item>
                 <a-menu-item key="2">
-                  <NuxtLink :to="switchLocalePath('ar')">Arab</NuxtLink>
+                  <NuxtLink :to="switchLocalePath('ru')">Русский</NuxtLink>
                 </a-menu-item>
               </a-menu>
               <a-button style="margin-left: 8px">
@@ -50,28 +52,32 @@
         <div></div>
         <ul>
           <li>
-            <NuxtLink class="link" :to="localePath('/')"> Main </NuxtLink>
+            <NuxtLink class="link" :to="localePath('/')">
+              {{ $store.state.translations["main.main"] }}
+            </NuxtLink>
           </li>
           <li>
             <NuxtLink class="link" :to="localePath('/about')">
-              About us
+              {{ $store.state.translations["main.about"] }}
             </NuxtLink>
           </li>
           <li>
             <NuxtLink class="link" :to="localePath('/services')">
-              Services
+              {{ $store.state.translations["main.services"] }}
             </NuxtLink>
           </li>
           <li>
-            <NuxtLink class="link" :to="localePath('/news')"> News </NuxtLink>
+            <NuxtLink class="link" :to="localePath('/news')">
+              {{ $store.state.translations["main.news"] }}
+            </NuxtLink>
           </li>
           <li>
             <NuxtLink class="link" :to="localePath('/contacts')">
-              Contacts
+              {{ $store.state.translations["main.contacts"] }}
             </NuxtLink>
           </li>
         </ul>
-        <a href="#" class="tel">
+        <button class="tel" @click="openAppModal()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -84,8 +90,8 @@
               fill="#F9E567"
             />
           </svg>
-          Связаться с нами
-        </a>
+          {{ $store.state.translations["main.contact-us"] }}
+        </button>
       </div>
     </div>
   </div>
@@ -101,6 +107,15 @@ export default {
   watch: {
     $route() {
       this.menuHandle = false;
+    },
+  },
+  methods: {
+    openAppModal() {
+      this.$refs.appModal.openModal();
+    },
+
+    closeAppModal() {
+      this.$refs.appModal.closeModal();
     },
   },
 };

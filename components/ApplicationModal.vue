@@ -22,32 +22,38 @@
 
       <div class="form">
         <h4 class="title">
-          Do you need a trusted accountant to guide you in the right direction?
+          {{ $store.state.translations["main.form-title"] }}
         </h4>
         <p class="sub">
-          By sending the informations, you agree with the conditions for
-          processing personal data
+          {{ $store.state.translations["inner.form-sub"] }}
         </p>
         <form @submit.prevent="onSubmit">
           <div class="inputs">
             <input
               type="number"
-              placeholder="Phone number"
+              :placeholder="$store.state.translations[`main.enter-number`]"
               required
               v-model="number"
             />
-            <input type="email" placeholder="E-mail" v-model="email" />
+            <input
+              type="email"
+              :placeholder="$store.state.translations[`main.enter-email`]"
+              v-model="email"
+            />
           </div>
-          <textarea placeholder="Comments" v-model="message"></textarea>
+          <textarea
+            :placeholder="$store.state.translations[`main.comments`]"
+            v-model="message"
+          ></textarea>
           <div class="bottom">
             <div class="check">
               <input type="checkbox" id="checker" required />
               <label for="checker"
-                >I agree to the terms of the Privacy Policy
+                >{{ $store.state.translations["main.privacy"] }}
               </label>
             </div>
             <button type="submit">
-              Submit
+              {{ $store.state.translations["main.submit"] }}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="15"

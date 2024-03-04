@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h4 class="title">Services</h4>
+      <h4 class="title">{{ $store.state.translations["main.services"] }}</h4>
       <div class="items">
         <div v-for="item in services" :key="item.id" class="item">
           <NuxtLink :to="localePath(`/services/${item.slug}`)">

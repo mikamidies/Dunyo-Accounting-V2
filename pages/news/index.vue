@@ -1,6 +1,6 @@
 <template>
   <div class="master">
-    <SiteTop title="News" />
+    <SiteTop :title="$store.state.translations['main.news']" />
     <NewsGrid :news="news" :newsCategories="newsCategories" />
     <HomeContacts />
   </div>

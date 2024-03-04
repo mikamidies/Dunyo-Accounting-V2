@@ -4,7 +4,9 @@
       <div class="crumbs">
         <ol>
           <li>
-            <NuxtLink class="last" :to="localePath('/')"> Main </NuxtLink>
+            <NuxtLink class="last" :to="localePath('/')">
+              {{ $store.state.translations["main.main"] }}
+            </NuxtLink>
           </li>
           <li>/</li>
           <li>

@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="container">
       <h4 class="title">
-        Copper tubes for plumbing and industries, for more than 50 years
+        {{ $store.state.translations["main.numbers-title"] }}
       </h4>
       <div class="items">
         <div class="item">
@@ -11,7 +11,7 @@
             <video src="/num.mp4" loop playsinline autoplay muted></video>
           </div>
           <p class="sub">
-            Personalized Advice for Wealth Managemen Personalized Advice
+            {{ $store.state.translations["main.number-1"] }}
           </p>
         </div>
         <div class="item">
@@ -19,7 +19,7 @@
             <p>50%</p>
             <video src="/num.mp4" loop playsinline autoplay muted></video>
           </div>
-          <p class="sub">Personalized Advice for Wealth Managemen</p>
+          <p class="sub">{{ $store.state.translations["main.number-2"] }}</p>
         </div>
         <div class="item">
           <div class="num">
@@ -27,7 +27,7 @@
             <video src="/num.mp4" loop playsinline autoplay muted></video>
           </div>
           <p class="sub">
-            Personalized Advice for Wealth Managemen Personalized
+            {{ $store.state.translations["main.number-3"] }}
           </p>
         </div>
       </div>

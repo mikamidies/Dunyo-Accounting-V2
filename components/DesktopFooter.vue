@@ -5,33 +5,34 @@
     <div class="container">
       <div class="grid">
         <div class="sec">
-          <h4 class="title">Contact us</h4>
+          <h4 class="title">
+            {{ $store.state.translations["main.contacts"] }}
+          </h4>
           <p class="sub">
-            If you have questions or want to discuss cooperation, write, call or
-            request a call back, and we will tell you everything ourselves
+            {{ $store.state.translations["main.footer-txt"] }}
           </p>
         </div>
         <div class="sec items" style="justify-items: end">
           <div class="item">
-            <p class="sup">Phone number</p>
+            <p class="sup">{{ $store.state.translations["main.phone"] }}</p>
             <a :href="`tel:${info?.nbm}`" class="value">{{ info?.nbm }}</a>
           </div>
           <div class="item">
-            <p class="sup">E-mail</p>
+            <p class="sup">{{ $store.state.translations["main.email"] }}</p>
             <a :href="`mailto:${info?.email}`" class="value">
               {{ info?.email }}
             </a>
           </div>
         </div>
         <div class="sec">
-          <p class="sup">Address</p>
+          <p class="sup">{{ $store.state.translations["main.office"] }}</p>
           <p class="value">
             {{ info?.adres }}
           </p>
         </div>
         <div class="sec ender">
           <div>
-            <p class="sup">Social media</p>
+            <p class="sup">{{ $store.state.translations["main.social"] }}</p>
             <div class="socials">
               <a :href="info?.youtube" target="_blank">
                 <svg
@@ -122,26 +123,39 @@
         </div>
       </div>
       <div class="bottom">
-        <p>Copyright © 2024 Dunyo Accounting LLC</p>
+        <p>{{ $store.state.translations["main.copy"] }}</p>
         <ul>
           <li>
-            <NuxtLink :to="localePath('/')">Main</NuxtLink>
+            <NuxtLink class="link" :to="localePath('/')">
+              {{ $store.state.translations["main.main"] }}
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink :to="localePath('/about')">About us</NuxtLink>
+            <NuxtLink class="link" :to="localePath('/about')">
+              {{ $store.state.translations["main.about"] }}
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink :to="localePath('/news')">News</NuxtLink>
+            <NuxtLink class="link" :to="localePath('/services')">
+              {{ $store.state.translations["main.services"] }}
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink :to="localePath('/services')">Services</NuxtLink>
+            <NuxtLink class="link" :to="localePath('/news')">
+              {{ $store.state.translations["main.news"] }}
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink :to="localePath('/contacts')">Contacts</NuxtLink>
+            <NuxtLink class="link" :to="localePath('/contacts')">
+              {{ $store.state.translations["main.contacts"] }}
+            </NuxtLink>
           </li>
         </ul>
         <div class="by">
-          by <a href="https://ndc.uz/" target="_blank">NDC</a>
+          {{ $store.state.translations["main.by"] }}
+          <a href="https://ndc.uz/" target="_blank">{{
+            $store.state.translations["main.ndc"]
+          }}</a>
         </div>
       </div>
     </div>

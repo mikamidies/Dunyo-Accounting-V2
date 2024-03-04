@@ -2,26 +2,21 @@
   <div class="wrap">
     <div class="container">
       <h4 class="title">
-        Proven Methods to Master Your Financial Landscape and Achieve Success
+        {{ $store.state.translations["main.about-title"] }}
       </h4>
       <div class="texts">
         <div class="left">
           <p class="txt">
-            At EY, our purpose is Building a better working world. The insights
-            and quality services we provide help build trust and confidence in
-            the capital markets and in economies the world over.
+            {{ $store.state.translations["about.text-1"] }}
           </p>
           <p>
-            We develop outstanding leaders who team to deliver on our promises
-            to all our stakeholders. In so doing, we play a critical role in
-            building a better working world for our people, for our clients and
-            for our communities
+            {{ $store.state.translations["about.text-2"] }}
           </p>
         </div>
         <div class="right">
           <p>
-            <span>Our purpose</span> — Building a better working world — is the
-            foundation of our culture
+            <span>{{ $store.state.translations["about.text-span"] }}</span>
+            {{ $store.state.translations["about.text-3"] }}
           </p>
           <img src="@/assets/img/logo/sign.png" class="sign" alt="" />
         </div>

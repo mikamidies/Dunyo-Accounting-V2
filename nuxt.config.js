@@ -43,7 +43,7 @@ export default {
   },
 
   i18n: {
-    locales: ["en", "ar"],
+    locales: ["en", "ru"],
     defaultLocale: "en",
     vueI18n: {
       fallbackLocale: "en",

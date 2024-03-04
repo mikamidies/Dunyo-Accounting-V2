@@ -12,24 +12,28 @@
         /></NuxtLink>
         <ul>
           <li>
-            <NuxtLink class="link" :to="localePath('/')"> Main </NuxtLink>
+            <NuxtLink class="link" :to="localePath('/')">
+              {{ $store.state.translations["main.main"] }}
+            </NuxtLink>
           </li>
           <li>
             <NuxtLink class="link" :to="localePath('/about')">
-              About us
+              {{ $store.state.translations["main.about"] }}
             </NuxtLink>
           </li>
           <li>
             <NuxtLink class="link" :to="localePath('/services')">
-              Services
+              {{ $store.state.translations["main.services"] }}
             </NuxtLink>
           </li>
           <li>
-            <NuxtLink class="link" :to="localePath('/news')"> News </NuxtLink>
+            <NuxtLink class="link" :to="localePath('/news')">
+              {{ $store.state.translations["main.news"] }}
+            </NuxtLink>
           </li>
           <li>
             <NuxtLink class="link" :to="localePath('/contacts')">
-              Contacts
+              {{ $store.state.translations["main.contacts"] }}
             </NuxtLink>
           </li>
         </ul>
@@ -41,7 +45,7 @@
               <NuxtLink :to="switchLocalePath('en')">English</NuxtLink>
             </a-menu-item>
             <a-menu-item key="2">
-              <NuxtLink :to="switchLocalePath('ar')">Arab</NuxtLink>
+              <NuxtLink :to="switchLocalePath('ru')">Русский</NuxtLink>
             </a-menu-item>
           </a-menu>
           <a-button style="margin-left: 8px">
@@ -75,7 +79,7 @@
               fill="#F9E567"
             />
           </svg>
-          Связаться с нами
+          {{ $store.state.translations["main.contact-us"] }}
         </button>
       </div>
     </div>

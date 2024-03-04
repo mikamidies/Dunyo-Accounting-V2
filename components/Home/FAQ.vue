@@ -3,7 +3,7 @@
     <ApplicationModal ref="appModal" />
 
     <div class="container">
-      <h4 class="title">FAQ</h4>
+      <h4 class="title">{{ $store.state.translations["main.faq"] }}</h4>
       <div class="grid">
         <div class="left">
           <div class="buttons">
@@ -47,7 +47,7 @@
                     />
                   </svg>
 
-                  Связаться с нами
+                  {{ $store.state.translations["main.contact-us"] }}
                 </button>
               </div>
             </div>

@@ -4,22 +4,25 @@
       <div class="crumbs">
         <ol>
           <li>
-            <NuxtLink class="last" :to="localePath('/')"> Main </NuxtLink>
+            <NuxtLink class="last" :to="localePath('/')">
+              {{ $store.state.translations["main.main"] }}
+            </NuxtLink>
           </li>
           <li>/</li>
           <li>
-            <p class="current">Home</p>
+            <p class="current">
+              {{ $store.state.translations["main.about"] }}
+            </p>
           </li>
         </ol>
       </div>
       <div class="content">
-        <h1 class="title">About the company</h1>
+        <h1 class="title">{{ $store.state.translations["about.title"] }}</h1>
         <h4 class="sub">
-          Proven Methods to Master Your Financial Landscape and Achieve Success
+          {{ $store.state.translations["about.sub"] }}
         </h4>
         <p class="txt">
-          Unlock Your Financial Potential with Proven Strategies and
-          Personalized Advice for Wealth Managemen
+          {{ $store.state.translations["about.text"] }}
         </p>
       </div>
     </div>

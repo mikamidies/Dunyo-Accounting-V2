@@ -24,8 +24,7 @@
                 fill="#CBB356"
               />
             </svg>
-            Unlock Your Financial Potential with Proven Strategies and
-            Personalized
+            {{ $store.state.translations["main.about-ul_1"] }}
           </li>
           <li>
             <svg
@@ -42,7 +41,7 @@
                 fill="#CBB356"
               />
             </svg>
-            Unlock Your Financial Potential with Proven Strategies
+            {{ $store.state.translations["main.about-ul_2"] }}
           </li>
           <li>
             <svg
@@ -59,8 +58,7 @@
                 fill="#CBB356"
               />
             </svg>
-            Unlock Your Financial Potential with Proven Strategies and
-            Personalized Advice for Wealth
+            {{ $store.state.translations["main.about-ul_3"] }}
           </li>
         </ul>
         <div class="button">
@@ -77,7 +75,7 @@
                 fill="#866719"
               />
             </svg>
-            Связаться с нами
+            {{ $store.state.translations["main.contact-us"] }}
           </button>
         </div>
       </div>

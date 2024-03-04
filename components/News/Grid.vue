@@ -19,7 +19,11 @@
                 stroke-linejoin="round"
               />
             </svg>
-            <input v-model="search" type="text" placeholder="Search" />
+            <input
+              v-model="search"
+              type="text"
+              :placeholder="$store.state.translations[`inner.search`]"
+            />
           </div>
           <!-- <div class="sort">
             <a-select default-value="lucy">
@@ -33,7 +37,7 @@
             :class="{ disabled: Object.keys($route.query).length == 0 }"
             @click="allNews()"
           >
-            All News
+            {{ $store.state.translations["inner.all-news"] }}
           </button>
           <button
             v-for="category in newsCategories"

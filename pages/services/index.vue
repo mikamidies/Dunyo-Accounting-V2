@@ -1,6 +1,6 @@
 <template>
   <div class="master">
-    <SiteTop title="Services" />
+    <SiteTop :title="$store.state.translations[`main.services`]" />
     <HomeServices :services="services" :service="service" class="grid" />
     <HomeContacts />
   </div>

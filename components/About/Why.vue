@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="container">
       <div class="header">
-        <h4 class="title">Why choose us</h4>
+        <h4 class="title">{{ $store.state.translations["about.why"] }}</h4>
         <div class="buttons">
           <div class="whyPrev">
             <svg
@@ -46,12 +46,11 @@
           <div class="swiper-slide">
             <div class="cardo">
               <div class="content">
-                <h4 class="name">Managerial accounting</h4>
+                <h4 class="name">
+                  {{ $store.state.translations["about.why-title_1"] }}
+                </h4>
                 <p class="sub">
-                  Explore the story of our year in our 2023 Global Annual
-                  Review. See how our 364,000 people in 151 countries came
-                  together to help our clients transform to build enduring
-                  success in a rapidly changing world.
+                  {{ $store.state.translations["about.why-txt_1"] }}
                 </p>
               </div>
               <div class="icon">
@@ -80,12 +79,11 @@
           <div class="swiper-slide">
             <div class="cardo">
               <div class="content">
-                <h4 class="name">Financial information for internal users</h4>
+                <h4 class="name">
+                  {{ $store.state.translations["about.why-title_2"] }}
+                </h4>
                 <p class="sub">
-                  Explore the story of our year in our 2023 Global Annual
-                  Review. See how our 364,000 people in 151 countries came
-                  together to help our clients transform to build enduring
-                  success in a rapidly changing world.
+                  {{ $store.state.translations["about.why-txt_2"] }}
                 </p>
               </div>
               <div class="icon">
@@ -174,12 +172,11 @@
           <div class="swiper-slide">
             <div class="cardo">
               <div class="content">
-                <h4 class="name">Managerial accounting</h4>
+                <h4 class="name">
+                  {{ $store.state.translations["about.why-title_3"] }}
+                </h4>
                 <p class="sub">
-                  Explore the story of our year in our 2023 Global Annual
-                  Review. See how our 364,000 people in 151 countries came
-                  together to help our clients transform to build enduring
-                  success in a rapidly changing world.
+                  {{ $store.state.translations["about.why-txt_3"] }}
                 </p>
               </div>
               <div class="icon">
@@ -208,12 +205,11 @@
           <div class="swiper-slide">
             <div class="cardo">
               <div class="content">
-                <h4 class="name">Managerial accounting</h4>
+                <h4 class="name">
+                  {{ $store.state.translations["about.why-title_4"] }}
+                </h4>
                 <p class="sub">
-                  Explore the story of our year in our 2023 Global Annual
-                  Review. See how our 364,000 people in 151 countries came
-                  together to help our clients transform to build enduring
-                  success in a rapidly changing world.
+                  {{ $store.state.translations["about.why-txt_4"] }}
                 </p>
               </div>
               <div class="icon">

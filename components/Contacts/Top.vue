@@ -4,16 +4,20 @@
       <div class="crumbs">
         <ol>
           <li>
-            <NuxtLink class="last" :to="localePath('/')"> Main </NuxtLink>
+            <NuxtLink class="last" :to="localePath('/')">
+              {{ $store.state.translations["main.main"] }}
+            </NuxtLink>
           </li>
           <li>/</li>
           <li>
-            <p class="current">Contacts</p>
+            <p class="current">
+              {{ $store.state.translations["main.contacts"] }}
+            </p>
           </li>
         </ol>
       </div>
       <div class="content">
-        <h1 class="title">Contacts</h1>
+        <h1 class="title">{{ $store.state.translations["main.contacts"] }}</h1>
       </div>
     </div>
   </div>

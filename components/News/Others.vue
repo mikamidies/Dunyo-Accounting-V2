@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="container small">
-      <h4 class="title">Read more</h4>
+      <h4 class="title">{{ $store.state.translations["inner.read-more"] }}</h4>
       <div class="grid">
         <div v-for="item in post.other_news" :key="item.id" class="cardo">
           <NuxtLink :to="localePath(`/news/${item.slug}`)">

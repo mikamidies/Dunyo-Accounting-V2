@@ -5,11 +5,10 @@
     <div class="container">
       <div class="left">
         <h4 class="title">
-          Proven Methods to Master Your Financial Landscape and Achieve Success
+          {{ $store.state.translations["main.about-title"] }}
         </h4>
         <p class="sub">
-          Unlock Your Financial Potential with Proven Strategies and
-          Personalized Advice for Wealth Managemen
+          {{ $store.state.translations["main.about-sub"] }}
         </p>
         <div class="items">
           <div class="item">
@@ -28,8 +27,7 @@
               />
             </svg>
             <p>
-              Unlock Your Financial Potential with Proven Strategies and
-              Personalized
+              {{ $store.state.translations["main.about-ul_1"] }}
             </p>
           </div>
           <div class="item">
@@ -47,7 +45,7 @@
                 fill="#CBB356"
               />
             </svg>
-            <p>Unlock Your Financial Potential with Proven Strategies</p>
+            <p>{{ $store.state.translations["main.about-ul_2"] }}</p>
           </div>
           <div class="item">
             <svg
@@ -64,7 +62,7 @@
                 fill="#CBB356"
               />
             </svg>
-            <p>Unlock Your Financial Potential with Proven Strategies</p>
+            <p>{{ $store.state.translations["main.about-ul_2"] }}</p>
           </div>
         </div>
         <button @click="openAppModal()" class="button">
@@ -80,7 +78,7 @@
               fill="#866719"
             />
           </svg>
-          Связатся с нами
+          {{ $store.state.translations["main.contact-us"] }}
         </button>
       </div>
     </div>

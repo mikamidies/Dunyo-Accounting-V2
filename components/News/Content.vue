@@ -19,7 +19,7 @@
                 stroke-linejoin="round"
               />
             </svg>
-            All news
+            {{ $store.state.translations["inner.all-news"] }}
           </NuxtLink>
         </div>
         <p class="date">{{ post.date }}</p>

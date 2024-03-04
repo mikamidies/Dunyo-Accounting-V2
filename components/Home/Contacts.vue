@@ -2,22 +2,22 @@
   <div class="wrap">
     <div class="container">
       <div class="top">
-        <h4 class="title">Contact us</h4>
+        <h4 class="title">{{ $store.state.translations["main.contacts"] }}</h4>
         <div class="right">
           <div class="item">
-            <p class="sup">Head office:</p>
+            <p class="sup">{{ $store.state.translations["main.office"] }}</p>
             <p class="value">
               {{ info?.adres }}
             </p>
           </div>
           <div class="item">
-            <p class="sup">E-mail:</p>
+            <p class="sup">{{ $store.state.translations["main.email"] }}</p>
             <a :href="`mailto:${info?.email}`" class="value">{{
               info?.email
             }}</a>
           </div>
           <div class="item">
-            <p class="sup">Head office:</p>
+            <p class="sup">{{ $store.state.translations["main.number"] }}</p>
             <a :href="`tel:${info?.nbm}`" class="value">{{ info?.nbm }}</a>
           </div>
         </div>
@@ -25,21 +25,30 @@
       <div class="bottom">
         <div class="form">
           <h4 class="par">
-            Get in Touch: Reach Out to Us for Expert Financial Assistance
+            {{ $store.state.translations["main.form-title"] }}
           </h4>
           <form @submit.prevent="onSubmit">
             <input
               type="number"
-              placeholder="Phone number"
+              :placeholder="$store.state.translations[`main.enter-number`]"
               required
               v-model="number"
             />
-            <input type="email" placeholder="E-mail" required v-model="email" />
-            <input type="text" placeholder="Comments" v-model="message" />
+            <input
+              type="email"
+              :placeholder="$store.state.translations[`main.enter-email`]"
+              required
+              v-model="email"
+            />
+            <input
+              type="text"
+              :placeholder="$store.state.translations[`main.comments`]"
+              v-model="message"
+            />
             <div class="check">
               <input type="checkbox" id="check" required />
               <label for="check"
-                >I agree to the terms of the Privacy Policy
+                >{{ $store.state.translations["main.privacy"] }}
               </label>
             </div>
 
@@ -56,7 +65,7 @@
                   fill="white"
                 />
               </svg>
-              Связаться с нами
+              {{ $store.state.translations["main.submit"] }}
             </button>
           </form>
         </div>
