@@ -29,23 +29,29 @@
         </ul>
       </div>
       <div class="right">
-        <div class="lang">
-          Eng
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="12"
-            height="7"
-            viewBox="0 0 12 7"
-            fill="none"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M0.414376 1.03151C0.673133 0.70806 1.1451 0.655619 1.46855 0.914376L6.00003 4.53956L10.5315 0.914376C10.855 0.655619 11.3269 0.70806 11.5857 1.03151C11.8444 1.35495 11.792 1.82692 11.4685 2.08568L6.46855 6.08568C6.19464 6.30481 5.80542 6.30481 5.53151 6.08568L0.531506 2.08568C0.20806 1.82692 0.155619 1.35495 0.414376 1.03151Z"
-              fill="white"
-            />
-          </svg>
-        </div>
+        <a-dropdown>
+          <a-menu slot="overlay">
+            <a-menu-item key="1"> English </a-menu-item>
+            <a-menu-item key="2"> Arab </a-menu-item>
+          </a-menu>
+          <a-button style="margin-left: 8px">
+            Eng
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="10"
+              viewBox="0 0 20 10"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0.691929 0.885845C1.12319 0.346768 1.90981 0.259366 2.44888 0.690628L10.0013 6.7326L17.5538 0.690628C18.0929 0.259366 18.8795 0.346768 19.3108 0.885845C19.742 1.42492 19.6546 2.21154 19.1156 2.6428L10.7822 9.30947C10.3257 9.67469 9.677 9.67469 9.22048 9.30947L0.887146 2.6428C0.348069 2.21154 0.260667 1.42492 0.691929 0.885845Z"
+                fill="white"
+              />
+            </svg>
+          </a-button>
+        </a-dropdown>
         <button class="tel" @click="openAppModal()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -169,5 +175,17 @@ a img {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+.wrap :deep(.ant-btn) {
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
 }
 </style>
