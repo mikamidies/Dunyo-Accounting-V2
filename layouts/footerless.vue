@@ -1,6 +1,6 @@
 <template>
   <main>
-    <DesktopHeader />
+    <DesktopHeader class="main__navbar" />
     <div class="site">
       <nuxt />
     </div>
@@ -19,5 +19,13 @@ main {
 }
 .site {
   flex: 1;
+}
+.main__navbar {
+  display: block;
+}
+@media screen and (max-width: 1024px) {
+  .main__navbar {
+    display: none;
+  }
 }
 </style>

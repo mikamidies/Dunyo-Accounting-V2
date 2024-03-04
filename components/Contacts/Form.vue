@@ -47,17 +47,18 @@
           <p class="sup">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
               fill="none"
             >
               <path
-                d="M6 8L9.7812 10.5208C11.1248 11.4165 12.8752 11.4165 14.2188 10.5208L18 8M6 21H18C20.2091 21 22 19.2091 22 17V7C22 4.79086 20.2091 3 18 3H6C3.79086 3 2 4.79086 2 7V17C2 19.2091 3.79086 21 6 21Z"
+                d="M14 7.25927C14 10.5321 10.25 14.6667 8 14.6667C5.75 14.6667 2 10.5321 2 7.25927C2 3.98647 4.68629 1.33334 8 1.33334C11.3137 1.33334 14 3.98647 14 7.25927Z"
                 stroke="white"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              />
+              <path
+                d="M10 7.33334C10 8.43791 9.10457 9.33334 8 9.33334C6.89543 9.33334 6 8.43791 6 7.33334C6 6.22877 6.89543 5.33334 8 5.33334C9.10457 5.33334 10 6.22877 10 7.33334Z"
+                stroke="white"
               />
             </svg>
             Address
@@ -293,5 +294,102 @@ iframe {
 }
 .by a {
   color: #f9e567 !important;
+}
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding-top: 40px;
+  }
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .sup {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+  }
+  .value {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .sup svg {
+    width: 16px;
+    height: 16px;
+  }
+  .title {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 8px;
+  }
+  .sub {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 24px;
+  }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .inputs input {
+    width: 100%;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  textarea {
+    min-height: 80px;
+  }
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 48px;
+  }
+  .check label {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+  }
+  .x {
+    top: 10px;
+    right: 10px;
+  }
+  .x svg {
+    width: 24px;
+    height: 24px;
+  }
+  .bottom button {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    width: 100%;
+    padding: 10px 24px;
+  }
+  iframe {
+    height: 400px;
+    border-radius: 8px;
+  }
+  .bottomer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 }
 </style>

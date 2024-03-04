@@ -73,4 +73,22 @@ export default {};
   max-width: 600px;
   margin: 0 auto;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding-top: 108px;
+  }
+  .crumbs ol {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+}
 </style>
