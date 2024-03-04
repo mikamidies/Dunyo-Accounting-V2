@@ -33,12 +33,16 @@
               </a-button>
             </a-dropdown>
           </div>
-          <div class="burger">
+          <div
+            class="burger"
+            @click="menuHandle = !menuHandle"
+            :class="{ x: menuHandle == true }"
+          >
             <div class="stick"></div>
           </div>
         </div>
       </div>
-      <div class="menu">
+      <div class="menu" :class="{ show: menuHandle == true }">
         <div></div>
         <ul>
           <li>
@@ -54,7 +58,7 @@
             <NuxtLink to="/news">News</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/contact">Contacts</NuxtLink>
+            <NuxtLink to="/contacts">Contacts</NuxtLink>
           </li>
         </ul>
         <a href="#" class="tel">
@@ -78,7 +82,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      menuHandle: false,
+    };
+  },
+  watch: {
+    $route() {
+      this.menuHandle = false;
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -156,6 +171,12 @@ export default {};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: 0.4s;
+
+  transform: translateX(-100%);
+}
+.menu.show {
+  transform: translateX(0);
 }
 ul a {
   font-size: 18px;

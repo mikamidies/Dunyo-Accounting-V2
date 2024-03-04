@@ -145,7 +145,7 @@ export default {
     line-height: 150%;
   }
   .wrap {
-    padding: 100px 0 48px 0;
+    padding: 124px 0 48px 0;
   }
 }
 </style>

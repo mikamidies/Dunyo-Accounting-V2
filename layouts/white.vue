@@ -1,6 +1,7 @@
 <template>
   <main>
     <DesktopHeader class="white" />
+    <MobileHeader class="mobile__navbar" />
     <div class="site">
       <nuxt />
     </div>
@@ -41,9 +42,15 @@ main {
 .white {
   background: white !important;
 }
+.mobile__navbar {
+  display: none;
+}
 @media screen and (max-width: 1024px) {
   .white {
     display: none;
+  }
+  .mobile__navbar {
+    display: block;
   }
 }
 </style>

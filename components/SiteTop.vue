@@ -78,7 +78,7 @@ export default {
 }
 @media screen and (max-width: 1024px) {
   .wrap {
-    padding-top: 100px;
+    padding-top: 124px;
   }
   .crumbs ol {
     font-size: 14px;

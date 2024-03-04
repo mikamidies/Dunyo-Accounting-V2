@@ -173,7 +173,7 @@ export default {
 }
 @media screen and (max-width: 1024px) {
   .master {
-    padding-top: 108px;
+    padding-top: 124px;
   }
   .back {
     display: flex;
