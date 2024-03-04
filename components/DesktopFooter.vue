@@ -11,7 +11,6 @@
             request a call back, and we will tell you everything ourselves
           </p>
         </div>
-        <!-- <div class="sec"></div> -->
         <div class="sec items" style="justify-items: end">
           <div class="item">
             <p class="sup">Phone number</p>
@@ -22,50 +21,6 @@
             <a href="mailto:info@dunyo.ae" class="value"> info@dunyo.ae </a>
           </div>
         </div>
-        <!-- <div class="sec ender">
-          <div>
-            <div class="email">
-              <span class="logo"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="34"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  fill="none"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M6.99185 9.26138C5.66406 10.5892 5.66406 12.7262 5.66406 17.0003C5.66406 21.2743 5.66406 23.4114 6.99185 24.7391C8.31963 26.0669 10.4567 26.0669 14.7307 26.0669H19.2641C23.5381 26.0669 25.6752 26.0669 27.0029 24.7391C28.3307 23.4114 28.3307 21.2743 28.3307 17.0003C28.3307 12.7262 28.3307 10.5892 27.0029 9.26138C25.6752 7.93359 23.5381 7.93359 19.2641 7.93359H14.7307C10.4567 7.93359 8.31963 7.93359 6.99185 9.26138ZM24.4504 11.9228C24.7509 12.2834 24.7022 12.8194 24.3415 13.1199L21.8522 15.1944C20.8477 16.0315 20.0335 16.71 19.3149 17.1722C18.5663 17.6537 17.8373 17.9578 16.9974 17.9578C16.1575 17.9578 15.4285 17.6537 14.6799 17.1722C13.9613 16.71 13.1471 16.0315 12.1426 15.1944L9.65324 13.1199C9.2926 12.8194 9.24388 12.2834 9.54441 11.9228C9.84494 11.5621 10.3809 11.5134 10.7416 11.8139L13.1883 13.8529C14.2457 14.734 14.9798 15.3438 15.5995 15.7424C16.1995 16.1283 16.6063 16.2578 16.9974 16.2578C17.3885 16.2578 17.7953 16.1283 18.3953 15.7424C19.015 15.3438 19.7491 14.734 20.8065 13.8529L23.2532 11.8139C23.6139 11.5134 24.1499 11.5621 24.4504 11.9228Z"
-                    fill="white"
-                  /></svg
-              ></span>
-              <p>Subscribe to our newsletter!</p>
-            </div>
-            <div class="form">
-              <input type="email" placeholder="Email" />
-              <button>
-                Subscribe
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                >
-                  <path
-                    d="M9.50391 6.06982L15.9339 12.4998L9.50391 18.9298"
-                    stroke="#866719"
-                    stroke-width="1.5"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div> -->
         <div class="sec">
           <p class="sup">Address</p>
           <p class="value">
@@ -168,22 +123,24 @@
         <p>Copyright © 2024 Dunyo Accounting LLC</p>
         <ul>
           <li>
-            <NuxtLink to="/">Main</NuxtLink>
+            <NuxtLink :to="localePath('/')">Main</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">About us</NuxtLink>
+            <NuxtLink :to="localePath('/about')">About us</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">News</NuxtLink>
+            <NuxtLink :to="localePath('/news')">News</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">Services</NuxtLink>
+            <NuxtLink :to="localePath('/services')">Services</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/">Contacts</NuxtLink>
+            <NuxtLink :to="localePath('/contacts')">Contacts</NuxtLink>
           </li>
         </ul>
-        <div class="by">by <a href="#">NDC</a></div>
+        <div class="by">
+          by <a href="https://ndc.uz/" target="_blank">NDC</a>
+        </div>
       </div>
     </div>
   </div>

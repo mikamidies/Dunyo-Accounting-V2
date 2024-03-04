@@ -4,35 +4,45 @@
 
     <div class="container">
       <div class="left">
-        <NuxtLink class="brand-main" to="/"
+        <NuxtLink class="brand-main" :to="localePath('/')"
           ><img src="@/assets/img/logo/brand.svg" alt=""
         /></NuxtLink>
-        <NuxtLink class="brand-colored" to="/"
+        <NuxtLink class="brand-colored" :to="localePath('/')"
           ><img src="@/assets/img/logo/colored.svg" alt=""
         /></NuxtLink>
         <ul>
           <li>
-            <NuxtLink class="link" to="/"> Main </NuxtLink>
+            <NuxtLink class="link" :to="localePath('/')"> Main </NuxtLink>
           </li>
           <li>
-            <NuxtLink class="link" to="/about"> About us </NuxtLink>
+            <NuxtLink class="link" :to="localePath('/about')">
+              About us
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink class="link" to="/services"> Services </NuxtLink>
+            <NuxtLink class="link" :to="localePath('/services')">
+              Services
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink class="link" to="/news"> News </NuxtLink>
+            <NuxtLink class="link" :to="localePath('/news')"> News </NuxtLink>
           </li>
           <li>
-            <NuxtLink class="link" to="/contacts"> Contacts </NuxtLink>
+            <NuxtLink class="link" :to="localePath('/contacts')">
+              Contacts
+            </NuxtLink>
           </li>
         </ul>
       </div>
       <div class="right">
         <a-dropdown>
           <a-menu slot="overlay">
-            <a-menu-item key="1"> English </a-menu-item>
-            <a-menu-item key="2"> Arab </a-menu-item>
+            <a-menu-item key="1">
+              <NuxtLink :to="switchLocalePath('en')">English</NuxtLink>
+            </a-menu-item>
+            <a-menu-item key="2">
+              <NuxtLink :to="switchLocalePath('ar')">Arab</NuxtLink>
+            </a-menu-item>
           </a-menu>
           <a-button style="margin-left: 8px">
             Eng

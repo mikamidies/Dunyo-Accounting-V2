@@ -6,7 +6,7 @@
 
     <div class="container small">
       <div class="back">
-        <NuxtLink to="/services">
+        <NuxtLink :to="localePath('/services')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"

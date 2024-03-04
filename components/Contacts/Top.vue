@@ -4,16 +4,16 @@
       <div class="crumbs">
         <ol>
           <li>
-            <NuxtLink class="last" to="/"> Main </NuxtLink>
+            <NuxtLink class="last" :to="localePath('/')"> Main </NuxtLink>
           </li>
           <li>/</li>
           <li>
-            <p class="current">Home</p>
+            <p class="current">Contacts</p>
           </li>
         </ol>
       </div>
       <div class="content">
-        <h1 class="title">About the company</h1>
+        <h1 class="title">Contacts</h1>
       </div>
     </div>
   </div>

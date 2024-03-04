@@ -11,8 +11,12 @@
           <div class="lang">
             <a-dropdown>
               <a-menu slot="overlay">
-                <a-menu-item key="1"> English </a-menu-item>
-                <a-menu-item key="2"> Arab </a-menu-item>
+                <a-menu-item key="1">
+                  <NuxtLink :to="switchLocalePath('en')">English</NuxtLink>
+                </a-menu-item>
+                <a-menu-item key="2">
+                  <NuxtLink :to="switchLocalePath('ar')">Arab</NuxtLink>
+                </a-menu-item>
               </a-menu>
               <a-button style="margin-left: 8px">
                 Eng
@@ -46,19 +50,25 @@
         <div></div>
         <ul>
           <li>
-            <NuxtLink to="/">Main</NuxtLink>
+            <NuxtLink class="link" :to="localePath('/')"> Main </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/about">About</NuxtLink>
+            <NuxtLink class="link" :to="localePath('/about')">
+              About us
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/services">Services</NuxtLink>
+            <NuxtLink class="link" :to="localePath('/services')">
+              Services
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/news">News</NuxtLink>
+            <NuxtLink class="link" :to="localePath('/news')"> News </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/contacts">Contacts</NuxtLink>
+            <NuxtLink class="link" :to="localePath('/contacts')">
+              Contacts
+            </NuxtLink>
           </li>
         </ul>
         <a href="#" class="tel">
@@ -178,7 +188,7 @@ export default {
 .menu.show {
   transform: translateX(0);
 }
-ul a {
+.menu ul a {
   font-size: 18px;
   font-style: normal;
   font-weight: 400;

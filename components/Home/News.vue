@@ -48,7 +48,7 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="item in news" :key="item.id">
             <div class="cardo">
-              <NuxtLink :to="`/news/${item.slug}`">
+              <NuxtLink :to="localePath(`/news/${item.slug}`)">
                 <div class="img">
                   <img :src="item.image" alt="" />
                 </div>

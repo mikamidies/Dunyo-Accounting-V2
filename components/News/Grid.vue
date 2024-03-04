@@ -48,7 +48,7 @@
 
       <div class="grid" v-if="news.length > 0">
         <div v-for="item in news" :key="item.id" class="cardo">
-          <NuxtLink :to="`/news/${item.slug}`">
+          <NuxtLink :to="localePath(`/news/${item.slug}`)">
             <div class="img">
               <img :src="item.image" alt="" />
             </div>

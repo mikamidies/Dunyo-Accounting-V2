@@ -4,7 +4,7 @@
       <h4 class="title">Services</h4>
       <div class="items">
         <div v-for="item in services" :key="item.id" class="item">
-          <NuxtLink :to="`/services/${item.slug}`">
+          <NuxtLink :to="localePath(`/services/${item.slug}`)">
             <div>
               <h2 class="name">{{ item.title }}</h2>
 

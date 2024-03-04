@@ -43,7 +43,7 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="content">
-                <p class="sup">Trust. Accuracy. Growth</p>
+                <p class="sup">{{ $store.state.translations["main.hello"] }}</p>
                 <h4 class="title">
                   Navigating through the numbers and developing customized
                   solutions

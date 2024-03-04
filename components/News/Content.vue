@@ -3,7 +3,7 @@
     <div class="container small">
       <div class="header">
         <div class="back">
-          <NuxtLink to="/news">
+          <NuxtLink :to="localePath('/news')">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

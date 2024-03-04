@@ -4,7 +4,7 @@
       <div class="crumbs">
         <ol>
           <li>
-            <NuxtLink class="last" to="/"> Main </NuxtLink>
+            <NuxtLink class="last" :to="localePath('/')"> Main </NuxtLink>
           </li>
           <li>/</li>
           <li>

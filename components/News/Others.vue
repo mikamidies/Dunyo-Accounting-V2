@@ -4,7 +4,7 @@
       <h4 class="title">Read more</h4>
       <div class="grid">
         <div v-for="item in post.other_news" :key="item.id" class="cardo">
-          <NuxtLink :to="`/news/${item.slug}`">
+          <NuxtLink :to="localePath(`/news/${item.slug}`)">
             <div class="img">
               <img :src="item.image" alt="" />
             </div>
