@@ -157,4 +157,75 @@ export default {
 .sub :deep(a) {
   color: #5d5d5f;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding-bottom: 48px;
+  }
+  .title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin: 0;
+  }
+  .grid {
+    margin-top: 24px;
+  }
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 24px;
+    gap: 16px;
+  }
+  .cardo a {
+    display: grid;
+    grid-template-columns: 122px 1fr;
+    gap: 12px;
+  }
+  .tags {
+    position: absolute;
+    margin: 0;
+    left: 134px;
+    top: 0;
+  }
+  .name {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    padding-top: 24px;
+  }
+  .sub {
+    display: none;
+  }
+  .cardo {
+    position: relative;
+    height: auto;
+    border-bottom: 1px solid #c2c2c3;
+  }
+  .img img {
+    height: 72px;
+  }
+  .tag {
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    padding: 2px 8px;
+  }
+  .date {
+    border-bottom: 0;
+  }
+  .date span {
+    display: none;
+  }
+  .date p {
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+  }
+  .bottom {
+    height: 100%;
+  }
+}
 </style>

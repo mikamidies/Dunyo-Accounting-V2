@@ -31,4 +31,9 @@ export default {
 .grid :deep(.title) {
   display: none;
 }
+@media screen and (max-width: 1024px) {
+  .grid {
+    padding-bottom: 48px;
+  }
+}
 </style>

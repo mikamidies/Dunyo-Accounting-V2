@@ -2,9 +2,34 @@
   <div class="master">
     <ApplicationModal ref="appModal" />
 
-    <SiteTop :title="service.title" />
+    <SiteTop :title="service.title" class="topper" />
 
     <div class="container small">
+      <div class="back">
+        <NuxtLink to="/services">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+          >
+            <path
+              d="M8.33333 6.66667L5 10M5 10L8.33333 13.3333M5 10L15 10"
+              stroke="#0D0539"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          All services
+        </NuxtLink>
+      </div>
+
+      <div class="mobile__title">
+        {{ service.title }}
+      </div>
+
       <div v-for="item in service.data" :key="item.id" class="html">
         <h4 class="sub_title">
           <img src="@/assets/img/logo/quote.png" alt="" />
@@ -134,11 +159,90 @@ export default {
   border-radius: 0;
   margin: 0;
 }
-.text :deep(p) {
+.text :deep(p),
+.text {
   color: var(--grey-80, #353437);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 30px */
+}
+.back,
+.mobile__title {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .master {
+    padding-top: 108px;
+  }
+  .back {
+    display: flex;
+    margin-bottom: 24px;
+  }
+  .back a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--Bg-background, #0d0539);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 19.6px */
+  }
+  .topper {
+    display: none;
+  }
+  .sub_title {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 8px;
+  }
+  .container {
+    padding-left: 48px;
+  }
+  .sub_title img {
+    left: -38px;
+    margin: 0 !important;
+  }
+  .mobile__title {
+    display: flex;
+    color: var(--Bg-background, #0d0539);
+    font-family: var(--decor-sm);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 24px */
+    margin-bottom: 40px;
+  }
+  .text :deep(p),
+  .text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .html :deep(img) {
+    margin-top: 16px;
+    height: 196px;
+    border-radius: 4px;
+  }
+  .html {
+    margin-bottom: 40px;
+  }
+  .button {
+    margin: 24px 0 48px -32px;
+  }
+  .button button {
+    width: 100%;
+    min-width: unset;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 15.6px */
+    padding: 10px 24px;
+    gap: 8px;
+  }
 }
 </style>

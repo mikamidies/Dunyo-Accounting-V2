@@ -110,4 +110,42 @@ export default {
   display: flex;
   margin-bottom: 24px;
 }
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 24px;
+  }
+  .back a {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .date {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  .pic {
+    height: 213px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+  }
+  .html p,
+  .html span,
+  .html li,
+  .html {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .wrap {
+    padding: 100px 0 48px 0;
+  }
+}
 </style>

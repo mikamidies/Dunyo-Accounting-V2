@@ -338,6 +338,9 @@ export default {
   line-height: 150%; /* 27px */
 }
 @media screen and (max-width: 1024px) {
+  .wrap {
+    padding-bottom: 48px;
+  }
   .search {
     padding-bottom: 9px;
     gap: 8px;
@@ -350,6 +353,8 @@ export default {
   }
   .grid {
     grid-template-columns: repeat(1, 1fr);
+    margin-top: 24px;
+    gap: 16px;
   }
   .cardo a {
     display: grid;
@@ -359,7 +364,7 @@ export default {
   .tags {
     position: absolute;
     margin: 0;
-    right: 134px;
+    left: 134px;
     top: 0;
   }
   .name {
@@ -375,6 +380,7 @@ export default {
   .cardo {
     position: relative;
     height: auto;
+    border-bottom: 1px solid #c2c2c3;
   }
   .img img {
     height: 72px;
@@ -397,6 +403,9 @@ export default {
     font-style: normal;
     font-weight: 500;
     line-height: 140%;
+  }
+  .bottom {
+    height: 100%;
   }
 }
 </style>

@@ -251,4 +251,70 @@ textarea {
   gap: 8px;
   min-width: 220px;
 }
+@media screen and (max-width: 1024px) {
+  .body {
+    width: 90%;
+    min-width: unset;
+    padding: 16px;
+  }
+  .title {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 8px;
+    max-width: 272px;
+  }
+  .sub {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 24px;
+  }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .inputs input {
+    width: 100%;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  textarea {
+    min-height: 80px;
+  }
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .check label {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+  }
+  .x {
+    top: 10px;
+    right: 10px;
+  }
+  .x svg {
+    width: 24px;
+    height: 24px;
+  }
+  .bottom button {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    width: 100%;
+    padding: 10px 24px;
+  }
+}
 </style>
