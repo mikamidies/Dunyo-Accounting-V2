@@ -112,6 +112,9 @@ export default {
   async fetch() {
     const newsData = await newsApi.getNews(this.$axios, {
       params: this.$route.query,
+      headers: {
+        language: this.$i18n.locale,
+      },
     });
 
     this.news = newsData;
@@ -139,9 +142,9 @@ export default {
     async changeNews() {
       const newsData = await newsApi.getNews(this.$axios, {
         params: this.$route.query,
-        // headers: {
-        //   language: this.$i18n.locale,
-        // },
+        headers: {
+          language: this.$i18n.locale,
+        },
       });
 
       this.news = newsData;
@@ -162,9 +165,9 @@ export default {
       if (val.length > 2) {
         const data = await newsApi.getNews(this.$axios, {
           params: { search: val },
-          // headers: {
-          //   language: this.$i18n.locale,
-          // },
+          headers: {
+            language: this.$i18n.locale,
+          },
         });
 
         this.news = data;
@@ -383,7 +386,7 @@ export default {
   }
   .cardo {
     position: relative;
-    height: auto;
+    height: 125px;
     border-bottom: 1px solid #c2c2c3;
   }
   .img img {

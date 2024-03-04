@@ -12,9 +12,19 @@ import servicesApi from "@/api/services";
 export default {
   layout: "white",
 
-  async asyncData({ $axios }) {
-    const services = await servicesApi.getServices($axios);
-    const service = await servicesApi.getService($axios);
+  async asyncData({ $axios, query, i18n }) {
+    const services = await servicesApi.getServices($axios, {
+      params: query,
+      headers: {
+        language: i18n.locale,
+      },
+    });
+    const service = await servicesApi.getService($axios, {
+      params: query,
+      headers: {
+        language: i18n.locale,
+      },
+    });
 
     return {
       services,

@@ -12,9 +12,19 @@ import newsApi from "@/api/news";
 export default {
   layout: "white",
 
-  async asyncData({ $axios }) {
-    const news = await newsApi.getNews($axios);
-    const newsCategories = await newsApi.getNewsCategories($axios);
+  async asyncData({ $axios, query, i18n }) {
+    const news = await newsApi.getNews($axios, {
+      params: query,
+      headers: {
+        Language: i18n.locale,
+      },
+    });
+    const newsCategories = await newsApi.getNewsCategories($axios, {
+      params: query,
+      headers: {
+        Language: i18n.locale,
+      },
+    });
 
     return {
       news,

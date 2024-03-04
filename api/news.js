@@ -16,12 +16,14 @@ export default {
     }
   },
 
-  async getNewsCategories(axios) {
+  async getNewsCategories(axios, params) {
     try {
       let res;
 
       if (axios) {
-        res = await axios.get("/news/categories");
+        res = await axios.get("/news/categories", {
+          ...params,
+        });
 
         return res.data.results;
       }
@@ -31,12 +33,14 @@ export default {
     }
   },
 
-  async getPost(slug, axios) {
+  async getPost(slug, axios, params) {
     try {
       let res;
 
       if (axios) {
-        res = await axios.get(`/news/${slug}`, {});
+        res = await axios.get(`/news/${slug}`, {
+          ...params,
+        });
       }
       return res.data;
     } catch (e) {

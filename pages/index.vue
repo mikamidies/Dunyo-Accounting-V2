@@ -20,11 +20,31 @@ import faqApi from "@/api/faq";
 import partnersApi from "@/api/partners";
 
 export default {
-  async asyncData({ $axios }) {
-    const services = await servicesApi.getServices($axios);
-    const news = await newsApi.getNews($axios);
-    const faq = await faqApi.getFAQ($axios);
-    const partners = await partnersApi.getPartners($axios);
+  async asyncData({ $axios, query, i18n }) {
+    const services = await servicesApi.getServices($axios, {
+      params: query,
+      headers: {
+        language: i18n.locale,
+      },
+    });
+    const news = await newsApi.getNews($axios, {
+      params: query,
+      headers: {
+        language: i18n.locale,
+      },
+    });
+    const faq = await faqApi.getFAQ($axios, {
+      params: query,
+      headers: {
+        language: i18n.locale,
+      },
+    });
+    const partners = await partnersApi.getPartners($axios, {
+      params: query,
+      headers: {
+        language: i18n.locale,
+      },
+    });
 
     return {
       services,

@@ -1,10 +1,12 @@
 export default {
-  async getServices(axios) {
+  async getServices(axios, params) {
     try {
       let res;
 
       if (axios) {
-        res = await axios.get("/service");
+        res = await axios.get("/service", {
+          ...params,
+        });
 
         return res.data.results;
       }
@@ -14,12 +16,14 @@ export default {
     }
   },
 
-  async getService(slug, axios) {
+  async getService(slug, axios, params) {
     try {
       let res;
 
       if (axios) {
-        res = await axios.get(`/service/${slug}`, {});
+        res = await axios.get(`/service/${slug}`, {
+          ...params,
+        });
       }
       return res.data;
     } catch (e) {

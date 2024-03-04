@@ -83,6 +83,12 @@ main {
 .mobile__navbar {
   display: none;
 }
+.white :deep(.ant-btn) {
+  color: var(--blue);
+}
+.white :deep(.ant-btn svg path) {
+  fill: var(--blue);
+}
 @media screen and (max-width: 1024px) {
   .white {
     display: none;
