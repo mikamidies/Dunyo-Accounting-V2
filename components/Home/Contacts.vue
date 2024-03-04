@@ -7,17 +7,18 @@
           <div class="item">
             <p class="sup">Head office:</p>
             <p class="value">
-              Galadari building 16, 1st floor, Office 69, IMPZ, Dubai – United
-              Arab Emirates
+              {{ info?.adres }}
             </p>
           </div>
           <div class="item">
             <p class="sup">E-mail:</p>
-            <a href="mailto:info@dunyo.ae" class="value">info@dunyo.ae</a>
+            <a :href="`mailto:${info?.email}`" class="value">{{
+              info?.email
+            }}</a>
           </div>
           <div class="item">
             <p class="sup">Head office:</p>
-            <a href="tel:+971 52 246 4048" class="value">+971 52 246 4048</a>
+            <a :href="`tel:${info?.nbm}`" class="value">{{ info?.nbm }}</a>
           </div>
         </div>
       </div>
@@ -78,6 +79,7 @@
 
 <script>
 import formApi from "@/api/form";
+import infoApi from "@/api/info";
 
 export default {
   data() {
@@ -86,7 +88,15 @@ export default {
       number: "",
       email: "",
       message: "",
+
+      info: "",
     };
+  },
+
+  async mounted() {
+    const infoData = await infoApi.getInfo(this.$axios);
+
+    this.info = infoData.data;
   },
 
   methods: {

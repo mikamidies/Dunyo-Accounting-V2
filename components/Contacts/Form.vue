@@ -21,7 +21,9 @@
             </svg>
             Send a message
           </p>
-          <a href="" class="value">miraazyz@gmail.com</a>
+          <a :href="`mailto:${info?.email}`" class="value">
+            {{ info?.email }}
+          </a>
         </div>
         <div class="item">
           <p class="sup">
@@ -41,7 +43,7 @@
             </svg>
             Call us directly
           </p>
-          <a href="" class="value">+971 52 246 40 48</a>
+          <a :href="`tel:${info?.nbm}`" class="value">{{ info?.nbm }}</a>
         </div>
         <div class="item">
           <p class="sup">
@@ -63,9 +65,7 @@
             </svg>
             Address
           </p>
-          <a href="" class="value"
-            >Galadari building 16, 1st floor Office 69, IMPZ, Dubai</a
-          >
+          <a href="" class="value">{{ info?.adres }}</a>
         </div>
       </div>
       <div class="form">
@@ -76,15 +76,20 @@
           By sending the informations, you agree with the conditions for
           processing personal data
         </p>
-        <form>
+        <form @submit.prevent="onSubmit">
           <div class="inputs">
-            <input type="text" placeholder="Phone number" />
-            <input type="text" placeholder="E-mail" />
+            <input
+              type="number"
+              placeholder="Phone number"
+              required
+              v-model="number"
+            />
+            <input type="email" placeholder="E-mail" required v-model="email" />
           </div>
-          <textarea placeholder="Comments"></textarea>
+          <textarea placeholder="Comments" v-model="message"></textarea>
           <div class="bottom">
             <div class="check">
-              <input type="checkbox" id="checker" />
+              <input type="checkbox" id="checker" required />
               <label for="checker"
                 >I agree to the terms of the Privacy Policy
               </label>
@@ -131,7 +136,63 @@
 </template>
 
 <script>
-export default {};
+import formApi from "@/api/form";
+import infoApi from "@/api/info";
+
+export default {
+  data() {
+    return {
+      modalHandle: false,
+      number: "",
+      email: "",
+      message: "",
+
+      info: "",
+    };
+  },
+
+  async mounted() {
+    const infoData = await infoApi.getInfo(this.$axios);
+
+    this.info = infoData.data;
+  },
+
+  methods: {
+    async onSubmit() {
+      const formData = {
+        email: this.email,
+        number: this.number,
+        message: this.message,
+      };
+
+      const res = await formApi.sendForm(formData);
+
+      if (res && res.status === 201) {
+        this.$notification["success"]({
+          message: "Succesfully sent!",
+        });
+      } else {
+        this.$notification["error"]({
+          message: "Error!",
+        });
+      }
+
+      this.email = "";
+      this.number = "";
+      this.message - "";
+
+      this.closeModal();
+    },
+
+    openModal() {
+      this.modalHandle = true;
+    },
+
+    closeModal() {
+      this.modalHandle = false;
+    },
+  },
+};
 </script>
 
 <style scoped>

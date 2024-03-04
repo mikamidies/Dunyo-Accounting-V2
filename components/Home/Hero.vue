@@ -68,8 +68,8 @@
                     </svg>
                     Связатся с нами
                   </button>
-                  <a href="tel:+971 52 246 4048" class="tel">
-                    +971 52 246 4048
+                  <a :href="`tel:${info.nbm}`" class="tel">
+                    {{ info?.nbm }}
                   </a>
                 </div>
               </div>
@@ -101,7 +101,9 @@
                     </svg>
                     Связатся с нами
                   </button>
-                  <a href="tel:+971 52 246 4048"> +971 52 246 4048 </a>
+                  <a :href="`tel:${info.nbm}`" class="tel">
+                    {{ info?.nbm }}
+                  </a>
                 </div>
               </div>
             </div>
@@ -132,7 +134,9 @@
                     </svg>
                     Связатся с нами
                   </button>
-                  <a href="tel:+971 52 246 4048"> +971 52 246 4048 </a>
+                  <a :href="`tel:${info.nbm}`" class="tel">
+                    {{ info?.nbm }}
+                  </a>
                 </div>
               </div>
             </div>
@@ -150,13 +154,25 @@
 </template>
 
 <script>
+import infoApi from "@/api/info";
+
 import Swiper from "swiper/swiper-bundle.js";
 import "swiper/swiper-bundle.min.css";
 
 export default {
   props: ["services"],
 
-  mounted() {
+  data() {
+    return {
+      info: "",
+    };
+  },
+
+  async mounted() {
+    const infoData = await infoApi.getInfo(this.$axios);
+
+    this.info = infoData.data;
+
     new Swiper(".heroSwiper", {
       loop: true,
       navigation: {

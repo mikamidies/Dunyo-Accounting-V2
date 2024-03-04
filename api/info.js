@@ -6,8 +6,6 @@ export default {
       if (axios) {
         res = await axios.get("/static_infos");
 
-        console.log(res);
-
         return res;
       }
       return res;

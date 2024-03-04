@@ -198,3 +198,11 @@ input:focus {
 .ant-dropdown-menu-submenu-title:hover {
   background: #2d568b;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
