@@ -1,5 +1,7 @@
 <template>
   <div class="wrap">
+    <div class="sausage first"></div>
+    <div class="sausage second"></div>
     <div class="container">
       <h4 class="title">
         {{ $store.state.translations["main.numbers-title"] }}
@@ -47,6 +49,16 @@ export default {};
   position: relative;
   width: 100%;
 }
+.first {
+  position: absolute;
+  left: 10%;
+  top: 0px;
+}
+.second {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+}
 .bird {
   position: absolute;
   top: 0;
@@ -78,7 +90,7 @@ export default {};
   grid-template-columns: repeat(3, 1fr);
   gap: 100px;
 }
-.num {
+.num p {
   font-size: 144px;
   font-style: normal;
   font-weight: 600;
@@ -86,6 +98,10 @@ export default {};
   position: relative;
   margin-bottom: 24px;
   color: #216fbf;
+  background: url(../../assets/img/number.gif);
+  mix-blend-mode: color-dodge;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .num video {
   display: none;

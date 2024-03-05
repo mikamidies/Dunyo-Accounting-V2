@@ -206,3 +206,13 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+.sausage {
+  border-radius: 1768px;
+  background: #fff;
+  mix-blend-mode: soft-light;
+  filter: blur(200px);
+  width: 380px;
+  height: 1768px;
+  transform: rotate(-45deg);
+  flex-shrink: 0;
+}
