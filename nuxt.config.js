@@ -20,12 +20,12 @@ export default {
 
   components: true,
 
-  buildModules: [],
+  buildModules: ["@nuxtjs/dotenv"],
 
   modules: ["@nuxtjs/axios", "@nuxtjs/i18n"],
 
   axios: {
-    baseURL: "https://dunyoapi.pythonanywhere.com/api",
+    baseURL: process.env.BASE_URL,
   },
 
   build: {

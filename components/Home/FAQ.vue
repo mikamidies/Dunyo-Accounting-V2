@@ -62,7 +62,7 @@
 export default {
   data() {
     return {
-      activeTab: 1,
+      activeTab: this.faq[0].id,
     };
   },
 
@@ -151,6 +151,17 @@ export default {
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 30px */
+}
+.sub :deep(p) {
+  margin-bottom: 12px;
+  display: flex;
+}
+.sub :deep(ul) {
+  padding-left: 24px;
+}
+.sub :deep(li) {
+  list-style: disc;
+  margin-bottom: 12px;
 }
 .call button {
   color: #216fbf;
