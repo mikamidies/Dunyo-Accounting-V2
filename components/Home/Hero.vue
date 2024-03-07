@@ -49,7 +49,7 @@
                 <h4 class="title">
                   {{ $store.state.translations["main.hero-title"] }}
                 </h4>
-                <p class="sub">
+                <!-- <p class="sub">
                   {{ $store.state.translations["main.hero-sub"] }}
                 </p>
                 <div class="numbers">
@@ -71,7 +71,7 @@
                   <a :href="`tel:${info.nbm}`" class="tel">
                     {{ info?.nbm }}
                   </a>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>

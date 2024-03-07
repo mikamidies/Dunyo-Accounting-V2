@@ -2,7 +2,7 @@
   <div class="master">
     <HomeHero :services="services" />
     <HomeAbout />
-    <HomeNumbers />
+    <!-- <HomeNumbers /> -->
     <HomeServices :services="services" />
     <HomeNews :news="news" />
     <HomeFAQ :faq="faq" />

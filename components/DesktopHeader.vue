@@ -4,10 +4,10 @@
 
     <div class="container">
       <div class="left">
-        <NuxtLink class="brand-main" :to="localePath('/')"
+        <NuxtLink class="brand-main brand" :to="localePath('/')"
           ><img src="@/assets/img/logo/brand.svg" alt=""
         /></NuxtLink>
-        <NuxtLink class="brand-colored" :to="localePath('/')"
+        <NuxtLink class="brand-colored brand" :to="localePath('/')"
           ><img src="@/assets/img/logo/colored.svg" alt=""
         /></NuxtLink>
         <ul>
@@ -39,7 +39,7 @@
         </ul>
       </div>
       <div class="right">
-        <a-dropdown>
+        <!-- <a-dropdown>
           <a-menu slot="overlay">
             <a-menu-item key="1">
               <NuxtLink :to="switchLocalePath('en')">English</NuxtLink>
@@ -65,7 +65,7 @@
               />
             </svg>
           </a-button>
-        </a-dropdown>
+        </a-dropdown> -->
         <button class="tel" @click="openAppModal()">
           <svg
             xmlns="http://www.w3.org/2000/svg"

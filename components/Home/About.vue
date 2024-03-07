@@ -7,9 +7,9 @@
         <h4 class="title">
           {{ $store.state.translations["main.about-title"] }}
         </h4>
-        <p class="sub">
+        <!-- <p class="sub">
           {{ $store.state.translations["main.about-sub"] }}
-        </p>
+        </p> -->
         <div class="items">
           <div class="item">
             <svg
@@ -115,7 +115,7 @@ export default {
   font-weight: 600;
   line-height: 120%; /* 57.6px */
   margin-bottom: 40px;
-  max-width: 1064px;
+  max-width: 1200px;
 }
 .sub {
   color: var(--Black, #020105);
@@ -133,10 +133,12 @@ export default {
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
+  max-width: 37%;
 }
 .item {
-  display: flex;
-  align-items: center;
+  display: grid;
+  align-items: baseline;
+  grid-template-columns: 24px 1fr;
   gap: 10px;
   color: var(--grey-80, #353437);
   font-size: 18px;
