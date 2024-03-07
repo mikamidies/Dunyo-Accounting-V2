@@ -62,7 +62,7 @@
 export default {
   data() {
     return {
-      activeTab: this.faq[0].id,
+      activeTab: this.faq[0]?.id,
     };
   },
 
