@@ -17,7 +17,9 @@
             }}</a>
           </div>
           <div class="item">
-            <p class="sup">{{ $store.state.translations["main.number"] }}</p>
+            <p class="sup">
+              {{ $store.state.translations["main.enter-number"] }}
+            </p>
             <a :href="`tel:${info?.nbm}`" class="value">{{ info?.nbm }}</a>
           </div>
         </div>
@@ -72,7 +74,7 @@
 
         <div class="map">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115443.10146065187!2d51.4295958365811!3d25.284141439752798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c534ffdce87f%3A0x44d9319f78cfd4b1!2z0JTQvtGF0LAsINCa0LDRgtCw0YA!5e0!3m2!1sru!2s!4v1709202425995!5m2!1sru!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24318.230715378766!2d55.18029898379754!3d25.036564084364667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6da7e9fc9149%3A0xddf5aae046fe3037!2sGAL%20Business%20Center%20-%20Serviced%20Offices%20%26%20Coworking%20Spaces%20in%20Dubai!5e0!3m2!1sen!2sae!4v1709823766538!5m2!1sen!2sae"
             width="600"
             height="450"
             style="border: 0"
