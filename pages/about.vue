@@ -3,10 +3,10 @@
     <AboutTop />
     <AboutWorld />
     <AboutContent />
-    <AboutImages :media="media" />
+    <!-- <AboutImages :media="media" />
     <AboutWhy />
-    <AboutTeam :staff="staff" />
-    <HomeContacts />
+    <AboutTeam :staff="staff" /> -->
+    <HomeContacts class="contacts" />
   </div>
 </template>
 
@@ -27,4 +27,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.contacts {
+  padding-top: 120px;
+}
+</style>

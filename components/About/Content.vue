@@ -21,9 +21,9 @@
           <img src="@/assets/img/logo/sign.png" class="sign" alt="" />
         </div>
       </div>
-      <div class="nums">
+      <!-- <div class="nums">
         <HomeNumbers class="nums" />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
