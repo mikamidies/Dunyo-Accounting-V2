@@ -181,6 +181,7 @@ export default {
   .items {
     gap: 16px;
     margin-bottom: 24px;
+    max-width: 100%;
   }
   .item {
     display: grid;

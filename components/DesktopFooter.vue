@@ -17,6 +17,12 @@
             <p class="sup">{{ $store.state.translations["main.phone"] }}</p>
             <a :href="`tel:${info?.nbm}`" class="value">{{ info?.nbm }}</a>
           </div>
+
+          <div class="item">
+            <p class="sup">{{ $store.state.translations["main.office-phone"] }}</p>
+            <a :href="`tel:${info?.nbm}`" class="value">{{ $store.state.translations["main.office-phone-value"] }}</a>
+          </div>
+
           <div class="item">
             <p class="sup">{{ $store.state.translations["main.email"] }}</p>
             <a :href="`mailto:${info?.email}`" class="value">
@@ -365,7 +371,7 @@ export default {
     margin-bottom: 4px;
   }
   .value {
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: 150%; /* 30px */

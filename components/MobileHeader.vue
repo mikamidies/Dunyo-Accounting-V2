@@ -10,7 +10,7 @@
           </NuxtLink>
         </div>
         <div class="right">
-          <div class="lang">
+          <!-- <div class="lang">
             <a-dropdown>
               <a-menu slot="overlay">
                 <a-menu-item key="1">
@@ -38,7 +38,7 @@
                 </svg>
               </a-button>
             </a-dropdown>
-          </div>
+          </div> -->
           <div
             class="burger"
             @click="menuHandle = !menuHandle"

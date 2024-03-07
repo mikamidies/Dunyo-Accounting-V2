@@ -354,5 +354,8 @@ video {
   .bird {
     display: none;
   }
+  .tags{
+    flex-wrap: nowrap;
+  }
 }
 </style>
