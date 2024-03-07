@@ -236,6 +236,8 @@ video {
   display: flex;
   align-items: center;
   gap: 32px;
+  row-gap: 12px;
+  flex-wrap: wrap;
   position: relative;
   z-index: 9;
   margin-top: -24px;
@@ -250,6 +252,7 @@ video {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   padding: 8px 24px;
+  white-space: nowrap;
 }
 .heroPrev {
   position: absolute;

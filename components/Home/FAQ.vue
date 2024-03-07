@@ -68,6 +68,10 @@ export default {
 
   props: ["faq"],
 
+  mounted() {
+    console.log(this.faq);
+  },
+
   methods: {
     openAppModal() {
       this.$refs.appModal.openModal();
