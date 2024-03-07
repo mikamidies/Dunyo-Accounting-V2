@@ -39,12 +39,12 @@
 
         <div class="text" v-html="item.text"></div>
 
-        <img :src="item.image" alt="" />
+        <img v-if="item.image !== null" :src="item.image" alt="" />
       </div>
 
       <div class="button">
         <button @click="openAppModal()">
-          {{ $store.state.translations["main.contact-title"] }}
+          {{ $store.state.translations["main.contact-us"] }}
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -85,6 +85,8 @@ export default {
       service,
     };
   },
+
+  mounted() {},
 
   methods: {
     openAppModal() {

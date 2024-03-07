@@ -87,6 +87,8 @@ export default {
 .item a {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   gap: 16px;
 }
 
@@ -109,7 +111,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  gap: 0;
+  gap: 40px;
 }
 .item:nth-child(3) {
   grid-row-start: 1;
@@ -185,6 +187,11 @@ export default {
   display: flex;
   align-items: center;
   gap: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .texts img {
   width: 20px;
