@@ -34,7 +34,7 @@
         </div>
         <div class="cats">
           <button
-            :class="{ disabled: Object.keys($route.query).length == 0 }"
+            :class="{ disabled: Object.keys($route.query)?.length == 0 }"
             @click="allNews()"
           >
             {{ $store.state.translations["inner.all-news"] }}
@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <div class="grid" v-if="news.length > 0">
+      <div class="grid" v-if="news?.length > 0">
         <div v-for="item in news" :key="item.id" class="cardo">
           <NuxtLink :to="localePath(`/news/${item.slug}`)">
             <div class="img">
@@ -162,7 +162,7 @@ export default {
 
   watch: {
     async search(val) {
-      if (val.length > 2) {
+      if (val?.length > 2) {
         const data = await newsApi.getNews(this.$axios, {
           params: { search: val },
           headers: {
@@ -172,7 +172,7 @@ export default {
 
         this.news = data;
       }
-      if (val.length == 0) {
+      if (val?.length == 0) {
         const data = await newsApi.getNews(this.$axios, {});
 
         this.news = data;

@@ -99,8 +99,10 @@ export default {
   font-weight: 400;
   line-height: 150%; /* 30px */
 }
-.html a {
-  color: var(--blue);
+.html :deep(a) {
+  color: #71b1fa;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 .html img {
   width: 100%;
