@@ -46,22 +46,22 @@
 
       <div ref="newsSwiper" class="swiper newsSwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="item in news" :key="item.id">
+          <div class="swiper-slide" v-for="post in news" :key="post.id">
             <div class="cardo">
-              <NuxtLink :to="localePath(`/news/${item.slug}`)">
+              <NuxtLink :to="localePath(`/news/${post.slug}`)">
                 <div class="img">
-                  <img :src="item.image" alt="" />
+                  <img :src="post.image" alt="" />
                 </div>
                 <div class="tags">
-                  <div class="tag">{{ item.category.title }}</div>
+                  <div class="tag">{{ post.category.title }}</div>
                 </div>
                 <div class="bottom">
                   <div class="content">
-                    <h2 class="name">{{ item.title }}</h2>
-                    <div v-html="item.text" class="sub"></div>
+                    <h2 class="name">{{ post.title }}</h2>
+                    <div v-html="post.text" class="sub"></div>
                   </div>
                   <div class="date">
-                    <p>{{ item.date }}</p>
+                    <p>{{ post.date }}</p>
 
                     <span>
                       <svg

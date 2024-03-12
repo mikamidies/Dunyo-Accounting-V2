@@ -1,5 +1,7 @@
 <template>
   <main>
+    <WholeLoader v-if="loading" />
+
     <DesktopHeader class="main__navbar" />
     <MobileHeader class="mobile__navbar" />
     <div class="site">
@@ -15,17 +17,23 @@ export default {
   data() {
     return {
       translations: [],
+      loading: true,
     };
   },
 
-  async fetch() {
-    const translations = await translationsApi.getTranslations(this.$axios, {
-      headers: {
-        Language: this.$i18n.locale,
-      },
-    });
+  async mounted() {
+    try {
+      const translations = await translationsApi.getTranslations(this.$axios, {
+        headers: {
+          Language: this.$i18n.locale,
+        },
+      });
 
-    await this.$store.commit("getTranslations", translations.data);
+      await this.$store.commit("getTranslations", translations.data);
+    } catch (error) {
+    } finally {
+      this.loading = false;
+    }
   },
 
   computed: {
@@ -44,9 +52,14 @@ export default {
 
       await this.$store.commit("getTranslations", translations.data);
     },
-  },
 
-  mounted() {},
+    $route() {
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+      }, 1000);
+    },
+  },
 };
 </script>
 

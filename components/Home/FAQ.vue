@@ -68,9 +68,7 @@ export default {
 
   props: ["faq"],
 
-  mounted() {
-    console.log(this.faq);
-  },
+  mounted() {},
 
   methods: {
     openAppModal() {
