@@ -34,7 +34,7 @@
         </div>
         <div class="cats">
           <button
-            :class="{ disabled: Object.keys($route.query)?.length == 0 }"
+            :class="{ disabled: Object.keys($route.query)?.length == 2 }"
             @click="allNews()"
           >
             {{ $store.state.translations["inner.all-news"] }}
@@ -89,8 +89,19 @@
           </NuxtLink>
         </div>
       </div>
+
       <div class="empty" v-else>
         <p>No Data</p>
+      </div>
+
+      <div class="pager" v-if="news?.length > 6">
+        <a-pagination
+          v-model="current"
+          :total="totalPage"
+          :page-size.sync="pageSize"
+          show-less-items
+          @change="pageChange"
+        />
       </div>
     </div>
   </div>
@@ -106,23 +117,57 @@ export default {
     return {
       search: "",
       news: "",
+
+      current: 1,
+      pageSize: 6,
+      totalPage: 1,
     };
   },
 
-  async fetch() {
-    const newsData = await newsApi.getNews(this.$axios, {
-      params: this.$route.query,
-      headers: {
-        language: this.$i18n.locale,
-      },
-    });
+  async fetch() {},
 
-    this.news = newsData;
+  async mounted() {
+    try {
+      const newsData = await newsApi.getNews(this.$axios, {
+        params: { ...this.$route.query, page_size: 6 },
+        headers: {
+          language: this.$i18n.locale,
+        },
+      });
+      this.news = newsData.results;
+      this.totalPage = newsData.total;
+    } catch (e) {
+      console.log(e);
+    }
+
+    if (
+      !Object.keys(this.$route.query).includes("page") ||
+      !Object.keys(this.$route.query).includes("page_size")
+    ) {
+      await this.$router.replace({
+        path: this.$route.fullPath,
+        query: { page: 1, page_size: 6 },
+      });
+    }
+    this.current = Number(this.$route.query.page);
   },
 
-  mounted() {},
-
   methods: {
+    async pageChange() {
+      try {
+        const newsData = await newsApi.getNews(this.$axios, {
+          params: { ...this.$route.query, page_size: 6 },
+          headers: {
+            language: this.$i18n.locale,
+          },
+        });
+        this.news = newsData.results;
+        this.totalPage = newsData.total;
+      } catch (e) {
+        console.log(e);
+      }
+    },
+
     async sortCategory(value) {
       let query = { ...this.$route.query };
       query.category = value;
@@ -136,12 +181,12 @@ export default {
       }
 
       this.changeNews();
-      console.log(this.$route.query);
+      this.pageChange();
     },
 
     async changeNews() {
       const newsData = await newsApi.getNews(this.$axios, {
-        params: this.$route.query,
+        params: { ...this.$route.query, page_size: 6 },
         headers: {
           language: this.$i18n.locale,
         },
@@ -154,13 +199,25 @@ export default {
       await this.$router.replace(
         this.localePath({
           path: `/news`,
+          query: { page: 1, page_size: 6 },
         })
       );
       this.changeNews();
+      this.pageChange();
     },
   },
 
   watch: {
+    async current(val) {
+      if (val != this.$route.query?.page) {
+        await this.$router.replace({
+          path: this.$route.fullPath,
+          query: { ...this.$route.query, page: val },
+        });
+      }
+      this.pageChange();
+    },
+
     async search(val) {
       if (val?.length > 2) {
         const data = await newsApi.getNews(this.$axios, {
@@ -183,6 +240,46 @@ export default {
 </script>
 
 <style scoped>
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 40px;
+}
+.pager :deep(.ant-pagination-item),
+.pager :deep(.ant-pagination-item-link) {
+  border: 1px solid var(--grey-8, #ebebeb);
+  border-radius: 0;
+  min-width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.pager :deep(.ant-pagination) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pager :deep(.ant-pagination-item a) {
+  color: var(--Black, #020105);
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  margin: 0;
+  padding: 0;
+}
+.pager :deep(.ant-pagination-prev),
+.pager :deep(.ant-pagination-next) {
+  margin: 0;
+  height: 50px;
+}
+.pager :deep(.ant-pagination-item-active a) {
+  color: #03509f;
+}
 .top {
   margin-bottom: 24px;
   display: grid;
@@ -413,6 +510,22 @@ export default {
   }
   .bottom {
     height: 100%;
+  }
+  .pager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 24px;
+  }
+  .pager :deep(.ant-pagination-item),
+  .pager :deep(.ant-pagination-item-link) {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+  }
+  .pager :deep(.ant-pagination-prev),
+  .pager :deep(.ant-pagination-next) {
+    height: 32px;
   }
 }
 </style>

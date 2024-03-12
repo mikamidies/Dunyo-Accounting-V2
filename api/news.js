@@ -8,7 +8,9 @@ export default {
           ...params,
         });
 
-        return res.data.results;
+        console.log(res);
+
+        return { results: res?.data?.results, total: res?.data?.total_pages };
       }
       return res;
     } catch (e) {

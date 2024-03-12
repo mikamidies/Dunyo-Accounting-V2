@@ -46,6 +46,9 @@
           <div class="swiper-slide" v-for="item in partners" :key="item.id">
             <img :src="item.image" alt="" />
           </div>
+          <div class="swiper-slide" v-for="item in partners" :key="item.id">
+            <img :src="item.image" alt="" />
+          </div>
         </div>
       </div>
     </div>
@@ -60,6 +63,8 @@ export default {
   props: ["partners"],
 
   mounted() {
+    console.log(this.partners);
+
     new Swiper(".partnersSwiper", {
       slidesPerView: 2,
       loop: true,

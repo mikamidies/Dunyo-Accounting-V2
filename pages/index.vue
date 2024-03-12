@@ -27,7 +27,7 @@ export default {
         language: i18n.locale,
       },
     });
-    const news = await newsApi.getNews($axios, {
+    const newsData = await newsApi.getNews($axios, {
       params: query,
       headers: {
         language: i18n.locale,
@@ -45,6 +45,8 @@ export default {
         language: i18n.locale,
       },
     });
+
+    const news = newsData.results;
 
     return {
       services,
