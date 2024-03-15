@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <img src="@/assets/img/logo/gif.gif" alt="" />
+    <img src="@/assets/img/logo/logo.gif" alt="" />
   </div>
 </template>
 

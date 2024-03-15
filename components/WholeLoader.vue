@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <img src="@/assets/img/logo/gif.gif" alt="" />
+    <img src="@/assets/img/logo/logo.gif" alt="" />
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {};
   display: flex;
   align-items: center;
   justify-content: center;
-  background: black;
+  background: #121b52;
   transition: 0.4s;
 }
 .wrap img {
