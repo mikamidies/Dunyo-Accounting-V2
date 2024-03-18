@@ -8,8 +8,6 @@ export default {
           ...params,
         });
 
-        console.log(res);
-
         return { results: res?.data?.results, total: res?.data?.total_pages };
       }
       return res;

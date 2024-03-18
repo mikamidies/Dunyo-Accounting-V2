@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <img src="@/assets/img/logo/logo.gif" alt="" />
+    <video muted autoplay playsinline loop src="/logo.mp4" alt="" />
   </div>
 </template>
 
@@ -19,11 +19,11 @@ export default {};
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #121b52;
+  background: #161d53;
   transition: 0.4s;
 }
-.wrap img {
-  width: 660px;
-  height: 660px;
+.wrap video {
+  width: 420px;
+  height: 420px;
 }
 </style>
