@@ -18,12 +18,6 @@
       </div>
       <div class="content">
         <h1 class="title">{{ $store.state.translations["about.title"] }}</h1>
-        <h4 class="sub">
-          {{ $store.state.translations["about.sub"] }}
-        </h4>
-        <p class="txt">
-          {{ $store.state.translations["about.text"] }}
-        </p>
       </div>
     </div>
   </div>
@@ -61,7 +55,6 @@ export default {};
   font-weight: 600;
   line-height: normal;
   text-transform: uppercase;
-  margin-bottom: 40px;
 }
 .sub {
   color: var(--White, #fff);
@@ -91,7 +84,6 @@ export default {};
     font-weight: 600;
     line-height: normal;
     text-transform: uppercase;
-    margin-bottom: 24px;
   }
   .crumbs ol {
     font-size: 14px;

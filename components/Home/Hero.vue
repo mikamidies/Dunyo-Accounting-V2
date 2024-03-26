@@ -2,39 +2,6 @@
   <div class="wrap">
     <ApplicationModal ref="appModal" />
 
-    <!-- <button class="heroPrev">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="14"
-        height="10"
-        viewBox="0 0 14 10"
-        fill="none"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M0.46967 4.46967C0.176776 4.76256 0.176776 5.23744 0.46967 5.53033L4.46967 9.53033C4.76256 9.82322 5.23744 9.82322 5.53033 9.53033C5.82322 9.23744 5.82322 8.76256 5.53033 8.46967L2.81066 5.75L13 5.75C13.4142 5.75 13.75 5.41421 13.75 5C13.75 4.58579 13.4142 4.25 13 4.25L2.81066 4.25L5.53033 1.53033C5.82322 1.23744 5.82322 0.762563 5.53033 0.46967C5.23744 0.176777 4.76256 0.176777 4.46967 0.46967L0.46967 4.46967Z"
-          fill="white"
-        />
-      </svg>
-    </button>
-    <button class="heroNext">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="14"
-        height="10"
-        viewBox="0 0 14 10"
-        fill="none"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M0.46967 4.46967C0.176776 4.76256 0.176776 5.23744 0.46967 5.53033L4.46967 9.53033C4.76256 9.82322 5.23744 9.82322 5.53033 9.53033C5.82322 9.23744 5.82322 8.76256 5.53033 8.46967L2.81066 5.75L13 5.75C13.4142 5.75 13.75 5.41421 13.75 5C13.75 4.58579 13.4142 4.25 13 4.25L2.81066 4.25L5.53033 1.53033C5.82322 1.23744 5.82322 0.762563 5.53033 0.46967C5.23744 0.176777 4.76256 0.176777 4.46967 0.46967L0.46967 4.46967Z"
-          fill="white"
-        />
-      </svg>
-    </button> -->
-
     <video autoplay muted playsinline loop src="/video.mp4"></video>
     <img src="@/assets/img/hero-bird.png" alt="" class="bird" />
     <div class="container">
@@ -49,29 +16,6 @@
                 <h4 class="title">
                   {{ $store.state.translations["main.hero-title"] }}
                 </h4>
-                <!-- <p class="sub">
-                  {{ $store.state.translations["main.hero-sub"] }}
-                </p>
-                <div class="numbers">
-                  <button @click="openAppModal()" class="button">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="19"
-                      viewBox="0 0 18 19"
-                      fill="none"
-                    >
-                      <path
-                        d="M18 16.5V14.8541C18 14.0363 17.5021 13.3008 16.7428 12.9971L14.7086 12.1835C13.7429 11.7971 12.6422 12.2156 12.177 13.146L12 13.5C12 13.5 9.5 13 7.5 11C5.5 9 5 6.5 5 6.5L5.35402 6.32299C6.28438 5.85781 6.70285 4.75714 6.31654 3.79136L5.50289 1.75722C5.19916 0.997903 4.46374 0.5 3.64593 0.5H2C0.895431 0.5 0 1.39543 0 2.5C0 11.3366 7.16344 18.5 16 18.5C17.1046 18.5 18 17.6046 18 16.5Z"
-                        fill="#866719"
-                      />
-                    </svg>
-                    {{ $store.state.translations["main.contact-us"] }}
-                  </button>
-                  <a :href="`tel:${info.nbm}`" class="tel">
-                    {{ info?.nbm }}
-                  </a>
-                </div> -->
               </div>
             </div>
           </div>
@@ -79,9 +23,14 @@
       </div>
 
       <div class="tags">
-        <div class="tag" v-for="item in services" :key="item.id">
+        <NuxtLink
+          :to="`/services/${item.slug}`"
+          class="tag"
+          v-for="item in services"
+          :key="item.id"
+        >
           {{ item.title }}
-        </div>
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -132,6 +81,7 @@ export default {
 .wrap {
   position: relative;
   height: 100vh;
+  overflow: hidden;
 }
 .wrap::after {
   background: linear-gradient(
@@ -157,6 +107,7 @@ video {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
+  transform: scale(1.1);
 }
 .bird {
   position: absolute;
@@ -243,7 +194,7 @@ video {
   margin-top: -24px;
 }
 .tag {
-  color: var(--White, #fff);
+  color: var(--White, #fff) !important;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -331,13 +282,13 @@ video {
     display: none;
   }
   .slider {
-    height: 95%;
+    height: 90%;
   }
   .tags {
     gap: 8px;
     overflow-x: auto;
-    margin-right: -16px;
-    padding-right: 16px;
+    margin: 0 -16px;
+    padding: 0 16px;
   }
   .tags::-webkit-scrollbar {
     display: none;
@@ -354,7 +305,7 @@ video {
   .bird {
     display: none;
   }
-  .tags{
+  .tags {
     flex-wrap: nowrap;
   }
 }
