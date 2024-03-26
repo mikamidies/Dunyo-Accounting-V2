@@ -5,10 +5,10 @@
     <div class="container">
       <div class="left">
         <NuxtLink class="brand-main brand" :to="localePath('/')"
-          ><img src="@/assets/img/logo/brand.svg" alt=""
+          ><img src="@/assets/img/logo/brand.png" alt=""
         /></NuxtLink>
         <NuxtLink class="brand-colored brand" :to="localePath('/')"
-          ><img src="@/assets/img/logo/colored.svg" alt=""
+          ><img src="@/assets/img/logo/colored.png" alt=""
         /></NuxtLink>
         <ul>
           <li>
@@ -121,6 +121,7 @@ export default {
   display: none;
   width: 105px;
 }
+
 a img {
   width: 105px;
   height: 105px;

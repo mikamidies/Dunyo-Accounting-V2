@@ -6,8 +6,9 @@
       <div class="top">
         <div class="left">
           <NuxtLink to="/" class="brand">
-            <img src="@/assets/img/logo/brand.svg" alt="" />
+            <img src="@/assets/img/logo/brand.png" alt="" />
           </NuxtLink>
+          <p>Dunyo Accounting LLC</p>
         </div>
         <div class="right">
           <!-- <div class="lang">
@@ -49,7 +50,6 @@
         </div>
       </div>
       <div class="menu" :class="{ show: menuHandle == true }">
-        <div></div>
         <ul>
           <li>
             <NuxtLink class="link" :to="localePath('/')">
@@ -139,6 +139,18 @@ export default {
   position: relative;
   z-index: 9;
 }
+.brand {
+  display: flex;
+}
+.left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.left p {
+  font-size: 16px;
+  color: white;
+}
 .brand img {
   width: 64px;
   height: 64px;
@@ -203,6 +215,9 @@ export default {
 }
 .menu.show {
   transform: translateX(0);
+}
+ul {
+  padding-top: 32px;
 }
 .menu ul a {
   font-size: 18px;
