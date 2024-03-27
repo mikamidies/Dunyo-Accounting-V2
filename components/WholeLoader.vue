@@ -26,4 +26,10 @@ export default {};
   width: 420px;
   height: 420px;
 }
+@media screen and (max-width: 1024px) {
+  .wrap video {
+    width: 220px;
+    height: 220px;
+  }
+}
 </style>

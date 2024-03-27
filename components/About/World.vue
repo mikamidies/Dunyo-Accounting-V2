@@ -134,6 +134,9 @@ export default {
   gap: 22px;
   margin-bottom: 56px;
 }
+.brand {
+  width: 100px;
+}
 ul {
   display: flex;
   flex-direction: column;

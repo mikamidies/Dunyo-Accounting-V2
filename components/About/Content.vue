@@ -18,7 +18,7 @@
             <span>{{ $store.state.translations["about.text-span"] }}</span>
             {{ $store.state.translations["about.text-3"] }}
           </p>
-          <img src="@/assets/img/logo/sign.png" class="sign" alt="" />
+          <!-- <img src="@/assets/img/logo/sign.png" class="sign" alt="" /> -->
         </div>
       </div>
       <!-- <div class="nums">

@@ -22,7 +22,7 @@
               stroke-linejoin="round"
             />
           </svg>
-          {{ $store.state.translations["inner.all-news"] }}
+          {{ $store.state.translations["inner.services"] }}
         </NuxtLink>
       </div>
 
@@ -32,7 +32,7 @@
 
       <div v-for="item in service.data" :key="item.id" class="html">
         <h4 class="sub_title">
-          <img src="@/assets/img/logo/quote.png" alt="" />
+          <img src="@/assets/img/logo/quote.png" alt="" class="quote" />
 
           {{ item.title }}
         </h4>
@@ -219,7 +219,7 @@ export default {
     font-style: normal;
     font-weight: 600;
     line-height: 120%; /* 24px */
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
   .text :deep(p),
   .text {
@@ -248,6 +248,12 @@ export default {
     line-height: 130%; /* 15.6px */
     padding: 10px 24px;
     gap: 8px;
+  }
+  .quote {
+    width: 32px !important;
+    height: 32px !important;
+    object-fit: contain !important;
+    border-radius: 0 !important;
   }
 }
 </style>

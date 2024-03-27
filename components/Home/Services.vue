@@ -242,28 +242,20 @@ export default {
     row-gap: 16px;
   }
   .item:nth-child(1) {
-    width: calc(50% - 8px);
-    order: 0;
-    margin-right: 8px;
+    width: 100%;
   }
   .item:nth-child(2) {
     width: 100%;
     order: 2;
   }
   .item:nth-child(3) {
-    width: calc(50% - 8px);
-    order: 1;
-    margin-left: 8px;
+    width: 100%;
   }
   .item:nth-child(4) {
-    width: calc(50% - 8px);
-    order: 3;
-    margin-right: 8px;
+    width: 100%;
   }
   .item:nth-child(5) {
-    width: calc(50% - 8px);
-    order: 4;
-    margin-left: 8px;
+    width: 100%;
   }
   .item {
     border-radius: 8px;

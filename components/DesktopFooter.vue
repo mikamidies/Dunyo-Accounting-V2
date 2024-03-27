@@ -19,8 +19,14 @@
           </div>
 
           <div class="item">
-            <p class="sup">{{ $store.state.translations["main.office-phone"] }}</p>
-            <a :href="`tel:${info?.nbm}`" class="value">{{ $store.state.translations["main.office-phone-value"] }}</a>
+            <p class="sup">
+              {{ $store.state.translations["main.office-phone"] }}
+            </p>
+            <a
+              :href="`tel:${$store.state.translations['main.office-phone-value']}`"
+              class="value"
+              >{{ $store.state.translations["main.office-phone-value"] }}</a
+            >
           </div>
 
           <div class="item">
