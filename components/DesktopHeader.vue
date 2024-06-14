@@ -39,7 +39,7 @@
         </ul>
       </div>
       <div class="right">
-        <!-- <a-dropdown>
+        <a-dropdown>
           <a-menu slot="overlay">
             <a-menu-item key="1">
               <NuxtLink :to="switchLocalePath('en')">English</NuxtLink>
@@ -65,7 +65,7 @@
               />
             </svg>
           </a-button>
-        </a-dropdown> -->
+        </a-dropdown> 
         <button class="tel" @click="openAppModal()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
