@@ -49,7 +49,7 @@
             </a-menu-item>
           </a-menu>
           <a-button style="margin-left: 8px">
-            Eng
+           {{ $i18n.locale === 'en' ? 'Eng':"Ru" }} 
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
