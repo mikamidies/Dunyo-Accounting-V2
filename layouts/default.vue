@@ -22,7 +22,7 @@ export default {
     };
   },
 
-  async mounted() {
+  async fetch() {
     try {
       const translations = await translationsApi.getTranslations(this.$axios, {
         headers: {
