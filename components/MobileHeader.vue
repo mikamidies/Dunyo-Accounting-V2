@@ -77,6 +77,7 @@
             </NuxtLink>
           </li>
         </ul>
+      
         <button class="tel" @click="openAppModal()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -92,6 +93,38 @@
           </svg>
           {{ $store.state.translations["main.contact-us"] }}
         </button>
+
+        <div class="lang-block">
+          <NuxtLink class="lang-options" :to="switchLocalePath('en')">English</NuxtLink>
+          <NuxtLink class="lang-options" :to="switchLocalePath('ru')">Русский</NuxtLink>
+        </div>
+        <!-- <a-dropdown>
+          <a-menu slot="overlay">
+            <a-menu-item key="1">
+              <NuxtLink :to="switchLocalePath('en')">English</NuxtLink>
+            </a-menu-item>
+            <a-menu-item key="2">
+              <NuxtLink :to="switchLocalePath('ru')">Русский</NuxtLink>
+            </a-menu-item>
+          </a-menu>
+          <a-button style="margin-left: 8px">
+           {{ $i18n.locale === 'en' ? 'Eng':"Ru" }} 
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="10"
+              viewBox="0 0 20 10"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0.691929 0.885845C1.12319 0.346768 1.90981 0.259366 2.44888 0.690628L10.0013 6.7326L17.5538 0.690628C18.0929 0.259366 18.8795 0.346768 19.3108 0.885845C19.742 1.42492 19.6546 2.21154 19.1156 2.6428L10.7822 9.30947C10.3257 9.67469 9.677 9.67469 9.22048 9.30947L0.887146 2.6428C0.348069 2.21154 0.260667 1.42492 0.691929 0.885845Z"
+                fill="white"
+              />
+            </svg>
+          </a-button>
+        </a-dropdown>  -->
       </div>
     </div>
   </div>
@@ -122,6 +155,19 @@ export default {
 </script>
 
 <style scoped>
+.lang-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 16px;
+}
+.lang-block a {
+  color: white;
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--yellow, #f9e567);
+  padding: 8px 24px;
+}
 .wrap {
   background: #023475;
   padding: 16px 0;
