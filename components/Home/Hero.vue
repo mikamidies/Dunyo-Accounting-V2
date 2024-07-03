@@ -24,7 +24,7 @@
 
       <div class="tags">
         <NuxtLink
-          :to="`/services/${item.slug}`"
+          :to="localePath(`/services/${item.slug}`)"
           class="tag"
           v-for="item in services"
           :key="item.id"
