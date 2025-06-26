@@ -1,27 +1,27 @@
 @font-face {
   font-family: "Interfaces";
-  src: url(../fonts/TTINTERFACES-REGULAR.TTF);
+  src: url(../fonts/GolosText-Regular.ttf);
 }
 @font-face {
   font-family: "Interfaces-500";
-  src: url(../fonts/TTINTERFACES-MEDIUM.TTF);
+  src: url(../fonts/GolosText-Medium.ttf);
 }
 @font-face {
   font-family: "Interfaces-300";
-  src: url(../fonts/TTINTERFACES-LIGHT.TTF);
+  src: url(../fonts/GolosText-Medium.ttf);
 }
 
 @font-face {
   font-family: "Decor";
-  src: url(../fonts/RFDewiExtended-Regular.ttf);
+  src: url(../fonts/GolosText-Regular.ttf);
 }
 @font-face {
   font-family: "Decor-600";
-  src: url(../fonts/RFDewiExtended-Semibold.ttf);
+  src: url(../fonts/GolosText-SemiBold.ttf);
 }
 @font-face {
   font-family: "Decor-700";
-  src: url(../fonts/RFDewiExtended-Bold.ttf);
+  src: url(../fonts/GolosText-Bold.ttf);
 }
 
 :root {
